@@ -13,11 +13,13 @@ acupress = pd.DataFrame(data = acupress)
 #print(acupress)
 
 mean_p = []
-
 for index, row in acupress.iterrows():
     row = acupress.iloc[index]
     mean = np.mean(row)
     mean_p.append(mean)
 
-mean_p = pd.DataFrame(data = mean_p)
-print(mean_p)
+dev_p = []
+for column in acupress:
+    acu_col = acupress.loc[:, column]
+    dev = acu_col.sub(mean_p,fill_value=0)
+    dev_p.append(dev)

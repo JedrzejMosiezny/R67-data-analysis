@@ -15,12 +15,14 @@ acupress = pd.DataFrame(data = acupress)
 #print(acupress)
 
 mean_p = []
+dev_p = []
+A_rms = []
+
 for index, row in acupress.iterrows():
     row = acupress.iloc[index]
     mean = np.mean(row)
     mean_p.append(mean)
 
-dev_p = []
 for column in acupress:
     acu_col = acupress.loc[:, column]
     dev = acu_col.sub(mean_p,fill_value=0)
@@ -32,26 +34,20 @@ dev_p.to_csv('exp_dev_p.csv', sep=',')
 
 for index, row in dev_p.iterrows():
     row = dev_p.iloc[index]
-    plt.figure(index, figsize=(7,6))
+    rms = np.sqrt(np.mean(np.square(row)))
+    #print(rms)
+    A_rms.append(rms)
+    plt.figure(index, figsize=(10,6))
     plt.plot(row)
-    plt.title('Acoustic pressure at point '+index+'')
+    plt.axhline(y=rms, color='r', linestyle='-')
+    plt.axhline(y=0, color='k', linestyle='-')
+    plt.title('Acoustic pressure at point '+str(index))
     plt.xlabel('Time 1e-06')
     plt.ylabel('[Pa]')
-    plt.ylim((-2500,2500))
-    plt.savefig('Ap_point'+index+'.png')
-    #plt.show()
-    #print(row)
-
-
-
-
-'''
-plt.figure(1, figsize=(7,6))        #Numer rysunku (okna), rozmiar wykresu w calach
-plt.plot(heat)
-plt.title('Heat of reaction')
-plt.xlabel('Iteration')
-plt.ylabel('[W]')
-
-plt.text(120, 7000, Average heat of reaction from last 15 iteration is equal +avg_heat+' kW')
-
-'''
+    plt.xlim((0,340))
+    plt.ylim((-3000,3000))
+    plt.text(120, 7000, 'A_rms = '+str(A_rms))
+    plt.savefig('Ap_point_'+str(index)+'.png')
+    plt.close()
+A_rms = pd.DataFrame(data = A_rms)
+A_rms.to_csv('A_rms.csv', sep=',')

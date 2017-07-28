@@ -3,6 +3,7 @@ import pandas as pd
 import numpy as np
 import csv
 import matplotlib.pyplot as plt
+import math
 
 path_gen = 'D:/01_Dokumenty/01_PUT/01_DOKTORAT/11_CFX/05_PhD runs/R67_fluent/peak_R67_hgt_512k/trn_des_v01/' #ścieżka do katalogu z interesującymi nas plikami
 path_data = 'D:/01_Dokumenty/01_PUT/01_DOKTORAT/11_CFX/05_PhD runs/R67_fluent/peak_R67_hgt_512k/trn_des_v01/data/' #ścieżka do katalogu z interesującymi nas plikami
@@ -17,7 +18,8 @@ acupress = pd.DataFrame(data = acupress)
 
 mean_p = []
 dev_p = []
-A_rms = []
+p_rms = []
+dblev =[]
 
 for index, row in acupress.iterrows():
     row = acupress.iloc[index]
@@ -37,8 +39,15 @@ os.chdir(path_plots)
 for index, row in dev_p.iterrows():
     row = dev_p.iloc[index]
     rms = np.sqrt(np.mean(np.square(row)))
-    A_rms.append(rms)
-    plt.figure(index, figsize=(10,6))
+    p_rms.append(rms)
+    db = 20 * math.log10(rms/0.00002)
+    dblev.append(db)
+
+    fig, ax1 = plt.subplot(index, figsize=(7,6))
+    ax1.plot(row, 'b-')
+
+'''
+    fig = plt.figure(index, figsize=(7,6))
     plt.plot(row)
     plt.axhline(y=rms, color='r', linestyle='-')
     plt.title('Acoustic pressure at point '+str(index))
@@ -46,11 +55,13 @@ for index, row in dev_p.iterrows():
     plt.ylabel('[Pa]')
     plt.xlim((0,340))
     plt.ylim((-3000,3000))
+    plt.text(120, 7000, 'some text')
     plt.grid(True)
-    plt.text(120, 7000, 'A_rms = '+str(A_rms))
     plt.savefig('Ap_point_'+str(index)+'.png')
     plt.close()
-
+'''
 os.chdir(path_post)
-A_rms = pd.DataFrame(data = A_rms)
-A_rms.to_csv('A_rms.csv', sep=',')
+p_rms = pd.DataFrame(data = p_rms)
+p_rms.to_csv('p_rms.csv', sep=',')
+dblev = pd.DataFrame(data = dblev)
+dblev.to_csv('dblev.csv', sep=',')

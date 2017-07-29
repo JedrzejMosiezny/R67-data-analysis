@@ -1,5 +1,5 @@
 import os
-path = '/data' 
+path = './data' 
 lista = os.listdir(path)
 
 for filename in lista:

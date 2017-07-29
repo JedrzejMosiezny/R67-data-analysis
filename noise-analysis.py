@@ -6,9 +6,9 @@ import matplotlib.pyplot as plt
 import math
 
 #path_gen = 'D:/01_Dokumenty/01_PUT/01_DOKTORAT/11_CFX/05_PhD runs/R67_fluent/peak_R67_hgt_512k/trn_des_v01/' #ścieżka do katalogu z interesującymi nas plikami
-path_data = '/data/' #ścieżka do katalogu z interesującymi nas plikami
-path_post = '/post/' #ścieżka do katalogu z interesującymi nas plikami
-path_plots = '/post/plots/' #ścieżka do katalogu z interesującymi nas plikami
+path_data = './data/' #ścieżka do katalogu z interesującymi nas plikami
+path_post = './post/' #ścieżka do katalogu z interesującymi nas plikami
+path_plots = './post/plots/' #ścieżka do katalogu z interesującymi nas plikami
 
 os.chdir(path_post)
 

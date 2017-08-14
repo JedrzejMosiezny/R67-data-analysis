@@ -38,6 +38,9 @@ node_coords = pd.DataFrame({
     'y-coordinate': averages['y-coordinate'],
     'z-coordinate': averages['z-coordinate']
 })
+x = node_coords['x-coordinate']
+y = node_coords['y-coordinate']
+z = node_coords['z-coordinate']
 print("Node coords done...")
 
 del(batch_data)
@@ -55,8 +58,16 @@ for file in filelist:
     acoustic_p = time_static_p.subtract(avg_static_p, fill_value=None)
     db = acoustic_p.apply(lambda x: 20 * np.log10(np.abs(x)/0.00002), axis=1)
     acoustic_data = pd.concat([node_coords, acoustic_p, db], axis=1)
+    acoustic_data.columns = ['x-coordinate', 'y-coordinate', 'z-coordinate', 'sound-pressure', 'db-level']
     os.chdir(path_acu)
-    acoustic_data.to_csv(str('int-01_acu_p_' + str(timestep) + '.dat'), sep=',')   
+    acoustic_data.to_csv(str('int-01_acu_p_' + str(timestep) + '.dat'), sep=',')
+    #plot starts here
+    os.chdir(path_plots)
+    plt.figure(figsize=(16,9))
+    plt.tripcolor(z,x,db_lev, 100, cmap=plt.cm.jet)
+    plt.colorbar()
+    plt.savefig(str('int-01_dblev_t_' + str(timestep) + '.png'))
+    plt.close()
 
 print("Exiting noise analysis loop...")
 

@@ -56,7 +56,7 @@ for file in filelist:
     db = acoustic_p.apply(lambda x: 20 * np.log10(np.abs(x)/0.00002), axis=1)
     acoustic_data = pd.concat([node_coords, acoustic_p, db], axis=1)
     os.chdir(path_acu)
-    acoustic_p.to_csv(str('int-01_acu_p_' + str(timestep) + '.dat'), sep=',')
+    acoustic_data.to_csv(str('int-01_acu_p_' + str(timestep) + '.dat'), sep=',')   
 
 print("Exiting noise analysis loop...")
 

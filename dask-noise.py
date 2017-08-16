@@ -77,29 +77,4 @@ for file in filelist:
     print(str('int-01_acu_' + str(timestep) + '.dat done...'))
 print("Exiting noise analysis loop...")
 
-print("Starting plotting loop...")
-os.chdir(path_acu)
-filelist = os.listdir(path_acu)
-for file in filelist:
-    timestep = str(os.path.basename(str(file)))[11:-4]
-    os.chdir(path_acu)
-    acu = pd.read_csv(file, sep=',', decimal='.', header=0)
-    x = acu['x-coordinate']
-    y = acu['y-coordinate']
-    z = acu['z-coordinate']
-    spl = acu['sound-pressure']
-    dbl = acu['db-level']
-    fig, (ax0, ax1) = plt.subplots(nrows=2, figsize=(20, 20), dpi=300)
-    spl_plot = ax0.tricontourf(z, x, spl, 100, cmap=plt.cm.bone, vmin=-10000, vmax=10000)
-    fig.colorbar(spl_plot, ax=ax0)
-    ax0.set_title(str('Sound pressure. Int-01. Time: ' + str(timestep)))
-    dbl_plot = ax1.tricontourf(z, x, dbl, 100, cmap=plt.cm.jet, vmin=0, vmax=194)
-    fig.colorbar(dbl_plot, ax=ax1)
-    ax1.set_title(str('dB level. Int-01. Time: ' + str(timestep)))
-    os.chdir(path_plots)
-    plt.savefig(str('int-01_acu_t_' + str(timestep) + '.png'))
-    plt.close()
-    print(str('int-01_acu_t_' + str(timestep) + '.png done...'))
-print("Exiting plotting loop...")
-
-input("Script done... Press any key to exit")
+print("Script done, exiting.")

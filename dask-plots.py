@@ -95,3 +95,5 @@ for file in filelist:
     plt.close()
     print(str('int-01_acu_t_' + str(timestep) + '.png done...'))
 print("Exiting plotting loop...")
+
+print("Script done, exiting.")

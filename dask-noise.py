@@ -7,10 +7,11 @@ import pandas as pd
 import dask.dataframe as dd
 import scipy
 import sklearn
-import matplotlib as plt
+import matplotlib.pyplot as plt
 import flask
 import math
 import scipy.interpolate as scin
+import matplotlib.colors as colors
 from matplotlib import cm
 from matplotlib.ticker import LinearLocator
 from matplotlib.ticker import MaxNLocator
@@ -102,9 +103,3 @@ for file in filelist:
 print("Exiting plotting loop...")
 
 input("Script done... Press any key to exit")
-    
-
-
-
-
-#rms = batch_data.groupby('nodenumber').square().compute()

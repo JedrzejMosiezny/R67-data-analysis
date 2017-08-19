@@ -26,15 +26,15 @@ print("Loaded Libraries...")
 print("Starting code...")
 
 print("Loading directories..")
-path_data = 'D:/01_Dokumenty/01_PUT/01_DOKTORAT/13_PLGRID/noise-data/int-01'
-path_post = 'D:/01_Dokumenty/01_PUT/01_DOKTORAT/13_PLGRID/noise-data/int-01/post'
-path_acu = 'D:/01_Dokumenty/01_PUT/01_DOKTORAT/13_PLGRID/noise-data/int-01/post/acu'
-path_plots = 'D:/01_Dokumenty/01_PUT/01_DOKTORAT/13_PLGRID/noise-data/int-01/post/plots' #ścieżka do katalogu z interesującymi nas plikami
+path_data = 'D:/01_Dokumenty/01_PUT/01_DOKTORAT/13_PLGRID/noise-data/int-12'
+path_post = 'D:/01_Dokumenty/01_PUT/01_DOKTORAT/13_PLGRID/noise-data/int-12/post'
+path_acu = 'D:/01_Dokumenty/01_PUT/01_DOKTORAT/13_PLGRID/noise-data/int-12/post/acu'
+path_plots = 'D:/01_Dokumenty/01_PUT/01_DOKTORAT/13_PLGRID/noise-data/int-12/post/plots' #ścieżka do katalogu z interesującymi nas plikami
 print("Loaded directories...")
 
 print("Loading batch acoustic data...")
 os.chdir(path_acu)
-batch_data = dd.read_csv('int-01*.dat', sep=',', decimal='.')
+batch_data = dd.read_csv('int-12*.dat', sep=',', decimal='.')
 print("Batch data done...")
 
 print("Calculate min, max, std for plotting range...")
@@ -63,12 +63,12 @@ print("Plotting RMS values...")
 fig, (ax0, ax1) = plt.subplots(nrows=2, figsize=(10, 10), dpi=300)
 spl_plot = ax0.scatter(z, x, c=spl, s=0.1, cmap=plt.cm.bone, norm=colors.SymLogNorm(linthresh=4000, linscale=4000, vmin=1000, vmax=12000))
 fig.colorbar(spl_plot, ax=ax0)
-ax0.set_title("Sound pressure@Int-01. RMS values [Pa]")
+ax0.set_title("Sound pressure@int-12. RMS values [Pa]")
 dbl_plot = ax1.scatter(z, x, c=dbl, s=0.1, vmin=min_dblrms, vmax=max_dblrms, cmap=plt.cm.bone)
 fig.colorbar(dbl_plot, ax=ax1)
-ax1.set_title("dB level@Int-01. RMS values [dB]")
+ax1.set_title("dB level@int-12. RMS values [dB]")
 os.chdir(path_plots)
-plt.savefig(str('int-01_acu_RMS.png'))
+plt.savefig(str('int-12_acu_RMS.png'))
 print("Plotting RMS done...")
 
 print("Starting plotting loop...")
@@ -86,14 +86,14 @@ for file in filelist:
     fig, (ax0, ax1) = plt.subplots(nrows=2, figsize=(10, 10), dpi=300)
     spl_plot = ax0.scatter(z, x, c=spl, s=2, cmap=plt.cm.bone, norm=colors.SymLogNorm(linthresh=5000, linscale=5000, vmin=-15000, vmax=12000))
     fig.colorbar(spl_plot, ax=ax0)
-    ax0.set_title(str('Sound pressure. Int-01. Time: ' + str(timestep)))
+    ax0.set_title(str('Sound pressure. int-12. Time: ' + str(timestep)))
     dbl_plot = ax1.scatter(z, x, c=dbl, s=2, vmin=min_dbl, vmax=max_dbl, cmap=plt.cm.bone)
     fig.colorbar(dbl_plot, ax=ax1)
-    ax1.set_title(str('dB level. Int-01. Time: ' + str(timestep)))
+    ax1.set_title(str('dB level. int-12. Time: ' + str(timestep)))
     os.chdir(path_plots)
-    plt.savefig(str('int-01_acu_t_' + str(timestep) + '.png'))
+    plt.savefig(str('int-12_acu_t_' + str(timestep) + '.png'))
     plt.close()
-    print(str('int-01_acu_t_' + str(timestep) + '.png done...'))
+    print(str('int-12_acu_t_' + str(timestep) + '.png done...'))
 print("Exiting plotting loop...")
 
 print("Script done, exiting.")

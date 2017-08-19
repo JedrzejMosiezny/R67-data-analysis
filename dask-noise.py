@@ -26,10 +26,10 @@ print("Loaded Libraries...")
 print("Starting code...")
 
 print("Loading directories..")
-path_data = 'D:/01_Dokumenty/01_PUT/01_DOKTORAT/13_PLGRID/noise-data/int-01'
-path_post = 'D:/01_Dokumenty/01_PUT/01_DOKTORAT/13_PLGRID/noise-data/int-01/post'
-path_acu = 'D:/01_Dokumenty/01_PUT/01_DOKTORAT/13_PLGRID/noise-data/int-01/post/acu'
-path_plots = 'D:/01_Dokumenty/01_PUT/01_DOKTORAT/13_PLGRID/noise-data/int-01/post/plots' #ścieżka do katalogu z interesującymi nas plikami
+path_data = 'D:/01_Dokumenty/01_PUT/01_DOKTORAT/13_PLGRID/noise-data/int-12'
+path_post = 'D:/01_Dokumenty/01_PUT/01_DOKTORAT/13_PLGRID/noise-data/int-12/post'
+path_acu = 'D:/01_Dokumenty/01_PUT/01_DOKTORAT/13_PLGRID/noise-data/int-12/post/acu'
+path_plots = 'D:/01_Dokumenty/01_PUT/01_DOKTORAT/13_PLGRID/noise-data/int-12/post/plots' #ścieżka do katalogu z interesującymi nas plikami
 print("Loaded directories...")
 
 
@@ -40,7 +40,7 @@ print("Loaded directories...")
 
 print("Loading batch data...")
 os.chdir(path_data)
-batch_data = dd.read_csv('int-01-*.dat', delimiter=r"\s+", decimal='.')
+batch_data = dd.read_csv('int-12-*.dat', delimiter=r"\s+", decimal='.')
 print("Batch data done...")
 
 print("Calculating batch averages...")
@@ -73,8 +73,8 @@ for file in filelist:
     acoustic_data = pd.concat([node_coords, acoustic_p, db], axis=1)
     acoustic_data.columns = ['x-coordinate', 'y-coordinate', 'z-coordinate', 'sound-pressure', 'db-level']
     os.chdir(path_acu)
-    acoustic_data.to_csv(str('int-01_acu_' + str(timestep) + '.dat'), sep=',')
-    print(str('int-01_acu_' + str(timestep) + '.dat done...'))
+    acoustic_data.to_csv(str('int-12_acu_' + str(timestep) + '.dat'), sep=',')
+    print(str('int-12_acu_' + str(timestep) + '.dat done...'))
 print("Exiting noise analysis loop...")
 
 print("Script done, exiting.")

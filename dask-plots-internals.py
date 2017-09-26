@@ -27,9 +27,9 @@ print("Starting code...")
 
 print("Loading directories..")
 path_data = 'D:/01_Dokumenty/01_PUT/01_DOKTORAT/13_PLGRID/noise-data/int-12'
-path_post = 'D:/01_Dokumenty/01_PUT/01_DOKTORAT/13_PLGRID/noise-data/int-12/post'
-path_acu = 'D:/01_Dokumenty/01_PUT/01_DOKTORAT/13_PLGRID/noise-data/int-12/post/acu'
-path_plots = 'D:/01_Dokumenty/01_PUT/01_DOKTORAT/13_PLGRID/noise-data/int-12/post/plots' #ścieżka do katalogu z interesującymi nas plikami
+path_post = 'D:/01_Dokumenty/01_PUT/01_DOKTORAT/13_PLGRID/noise-data/int-12-post'
+path_acu = 'D:/01_Dokumenty/01_PUT/01_DOKTORAT/13_PLGRID/noise-data/int-12-post/acu'
+path_plots = 'D:/01_Dokumenty/01_PUT/01_DOKTORAT/13_PLGRID/noise-data/int-12-post/plots' #ścieżka do katalogu z interesującymi nas plikami
 print("Loaded directories...")
 
 print("Loading batch acoustic data...")

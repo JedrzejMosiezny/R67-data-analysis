@@ -6,32 +6,16 @@ import platform
 import numpy as np
 import pandas as pd
 import dask.dataframe as dd
-import scipy
-import sklearn
-import matplotlib.pyplot as plt
-import flask
 import math
-import scipy.interpolate as scin
-import matplotlib.colors as colors
-from matplotlib import cm
-from matplotlib.ticker import LinearLocator
-from matplotlib.ticker import MaxNLocator
-from matplotlib.colors import ListedColormap
-from matplotlib.colors import BoundaryNorm
-from matplotlib.colors import LogNorm
-from mpl_toolkits.mplot3d import Axes3D
-from scipy.interpolate import griddata
-from sklearn import neighbors, datasets
 print("Loaded Libraries...")
 
 print("Starting code...")
 
 print("Loading directories..")
 path_data = 'D:/01_Dokumenty/01_PUT/01_DOKTORAT/13_PLGRID/noise-data/int-01'
-path_post = 'D:/01_Dokumenty/01_PUT/01_DOKTORAT/13_PLGRID/noise-data/int-01/post'
-path_acu = 'D:/01_Dokumenty/01_PUT/01_DOKTORAT/13_PLGRID/noise-data/int-01/post/acu'
-path_plots = 'D:/01_Dokumenty/01_PUT/01_DOKTORAT/13_PLGRID/noise-data/int-01/post/plots' #ścieżka do katalogu z interesującymi nas plikami
-
+path_post = 'D:/01_Dokumenty/01_PUT/01_DOKTORAT/13_PLGRID/noise-data/int-01-post'
+path_acu = 'D:/01_Dokumenty/01_PUT/01_DOKTORAT/13_PLGRID/noise-data/int-01-post/acu'
+path_plots = 'D:/01_Dokumenty/01_PUT/01_DOKTORAT/13_PLGRID/noise-data/int-01-post/plots'
 print("Loaded directories...")
 
 print("Loading batch data...")
@@ -62,7 +46,6 @@ print("Starting noise analysis loop...")
 for file in filelist:
     os.chdir(path_data)
     timestep = str(os.path.basename(str(file)))[7:-4]
-    #time_static_p = pd.DataFrame(pd.read_csv(file, sep='/s+', header=0, usecols=["nodenumber", "pressure"], skiprows=0, decimal='.')).set_index('nodenumber')
     time_static_p = pd.DataFrame(pd.read_csv(file, delimiter=r"\s+", header=0, usecols=["nodenumber", "pressure"], skiprows=0, decimal='.')).set_index('nodenumber')
     acoustic_p = time_static_p.subtract(avg_static_p, fill_value=None)
     db = acoustic_p.apply(lambda x: 20 * np.log10(np.abs(x)/0.00002), axis=1)

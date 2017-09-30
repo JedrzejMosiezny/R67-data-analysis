@@ -12,24 +12,15 @@ print("Loaded Libraries...")
 print("Starting code...")
 
 print("Loading directories..")
-path_data = 'D:/01_Dokumenty/01_PUT/01_DOKTORAT/13_PLGRID/noise-data/int-01'
-path_post = 'D:/01_Dokumenty/01_PUT/01_DOKTORAT/13_PLGRID/noise-data/int-01-post'
-path_acu = 'D:/01_Dokumenty/01_PUT/01_DOKTORAT/13_PLGRID/noise-data/int-01-post/acu'
-#path_plots = 'D:/01_Dokumenty/01_PUT/01_DOKTORAT/13_PLGRID/noise-data/int-01-post/plots'
-print("Loaded directories...")
-
-'''
-print("Loading directories..")
 path_data = '/net/scratch/people/plgmosieznyj/SRS-v02/noise-data/int-01'
 path_post = '/net/scratch/people/plgmosieznyj/SRS-v02/noise-data/int-01-post'
 path_acu = '/net/scratch/people/plgmosieznyj/SRS-v02/noise-data/int-01-post/acu'
-#path_plots = '/net/scratch/people/plgmosieznyj/SRS-v02/noise-data/int-01-post/plots'
+path_plots = '/net/scratch/people/plgmosieznyj/SRS-v02/noise-data/int-01-post/plots'
 print("Loaded directories...")
-'''
 
 print("Loading batch data...")
 os.chdir(path_data)
-batch_data = dd.read_csv('int-01*.dat', delimiter=r"\s+", decimal='.')
+batch_data = dd.read_csv('int-01-*.dat', delimiter=r"\s+", decimal='.')
 print("Batch data done...")
 
 print("Calculating batch averages...")
@@ -49,7 +40,7 @@ del(batch_data)
 print("Batch data deleted...")
 
 print("Listing files...")
-filelist = sorted(os.listdir(path_data))[len(os.listdir(path_acu)):]
+filelist = sorted(os.listdir(path_data))
 
 print("Starting noise analysis loop...")
 for file in filelist:

@@ -10,15 +10,15 @@ import math
 print("Starting code...")
 
 print("Loading directories..")
-path_data = 'D:/01_Dokumenty/01_PUT/01_DOKTORAT/13_PLGRID/noise-data/pside'
-path_post = 'D:/01_Dokumenty/01_PUT/01_DOKTORAT/13_PLGRID/noise-data/pside-post'
-path_acu = 'D:/01_Dokumenty/01_PUT/01_DOKTORAT/13_PLGRID/noise-data/pside-post/acu'
-path_plots = 'D:/01_Dokumenty/01_PUT/01_DOKTORAT/13_PLGRID/noise-data/pside-post/plots' 
+path_data = 'D:/01_Dokumenty/01_PUT/01_DOKTORAT/13_PLGRID/noise-data/sside'
+path_post = 'D:/01_Dokumenty/01_PUT/01_DOKTORAT/13_PLGRID/noise-data/sside-post'
+path_acu = 'D:/01_Dokumenty/01_PUT/01_DOKTORAT/13_PLGRID/noise-data/sside-post/acu'
+path_plots = 'D:/01_Dokumenty/01_PUT/01_DOKTORAT/13_PLGRID/noise-data/sside-post/plots' 
 print("Loaded directories...")
 
 print("Loading batch data...")
 os.chdir(path_data)
-batch_data = dd.read_csv('ps*.dat', delimiter=r"\s+", decimal='.')
+batch_data = dd.read_csv('ss*.dat', delimiter=r"\s+", decimal='.')
 print("Batch data done...")
 
 print("Calculating batch averages...")
@@ -50,8 +50,8 @@ for file in filelist:
     acoustic_data = pd.concat([node_coords, acoustic_p, db], axis=1)
     acoustic_data.columns = ['x-coordinate', 'y-coordinate', 'z-coordinate', 'sound-pressure', 'db-level']
     os.chdir(path_acu)
-    acoustic_data.to_csv(str('pside_acu_' + str(timestep) + '.dat'), sep=',')
-    print(str('pside_acu_' + str(timestep) + '.dat done...'))
+    acoustic_data.to_csv(str('sside_acu_' + str(timestep) + '.dat'), sep=',')
+    print(str('sside_acu_' + str(timestep) + '.dat done...'))
 print("Exiting noise analysis loop...")
 
 print("Script done, exiting.")

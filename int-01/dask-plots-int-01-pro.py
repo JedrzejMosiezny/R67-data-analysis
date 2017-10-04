@@ -26,15 +26,15 @@ print("Loaded Libraries...")
 print("Starting code...")
 
 print("Loading directories..")
-path_data = '/net/scratch/people/plgmosieznyj/SRS-v02/noise-data/sside'
-path_post = '/net/scratch/people/plgmosieznyj/SRS-v02/noise-data/sside-post'
-path_acu = '/net/scratch/people/plgmosieznyj/SRS-v02/noise-data/sside-post/acu'
-path_plots = '/net/scratch/people/plgmosieznyj/SRS-v02/noise-data/sside-post/plots' #ścieżka do katalogu z interesującymi nas plikami
+path_data = '/net/scratch/people/plgmosieznyj/SRS-v02/noise-data/int-01'
+path_post = '/net/scratch/people/plgmosieznyj/SRS-v02/noise-data/int-01-post'
+path_acu = '/net/scratch/people/plgmosieznyj/SRS-v02/noise-data/int-01-post/acu'
+path_plots = '/net/scratch/people/plgmosieznyj/SRS-v02/noise-data/int-01-post/plots'
 print("Loaded directories...")
 
 print("Loading batch acoustic data...")
 os.chdir(path_acu)
-batch_data = dd.read_csv('ss*.dat', sep=',', decimal='.')
+batch_data = dd.read_csv('*.dat', sep=',', decimal='.')
 print("Batch data done...")
 
 print("Calculate min, max, std for plotting range...")
@@ -44,7 +44,7 @@ min_spl=np.amin(minima['sound-pressure'])
 min_dbl=np.amin(minima['db-level'])
 max_spl=np.amax(maxima['sound-pressure'])
 max_dbl=np.amax(maxima['db-level'])
-std_devs = pd.DataFrame(batch_data.groupby('nodenumber').max().compute())
+std_devs = pd.DataFrame(batch_data.groupby('nodenumber').max().compute()) # to nie RMS, poprawić
 min_splrms=np.amin(std_devs['sound-pressure'])
 min_dblrms=np.amin(std_devs['db-level'])
 max_splrms=np.amax(std_devs['sound-pressure'])
@@ -60,15 +60,15 @@ dbl = std_devs['db-level']
 print("RMS values prep done...")
 
 print("Plotting RMS values...")
-fig, (ax0, ax1) = plt.subplots(nrows=2, figsize=(7, 10), dpi=300)
-spl_plot = ax0.scatter(z, y, c=spl, s=0.1, cmap=plt.cm.bone, norm=colors.SymLogNorm(linthresh=4000, linscale=4000, vmin=1000, vmax=12000))
+fig, (ax0, ax1) = plt.subplots(nrows=2, figsize=(10, 10), dpi=300)
+spl_plot = ax0.scatter(z, x, c=spl, s=0.1, cmap=plt.cm.bone, norm=colors.SymLogNorm(linthresh=4000, linscale=4000, vmin=1000, vmax=12000))
 fig.colorbar(spl_plot, ax=ax0)
-ax0.set_title("Sound pressure@sside. RMS values [Pa]")
-dbl_plot = ax1.scatter(z, y, c=dbl, s=0.1, vmin=min_dblrms, vmax=max_dblrms, cmap=plt.cm.bone)
+ax0.set_title("Sound pressure@int-01. RMS values [Pa]")
+dbl_plot = ax1.scatter(z, x, c=dbl, s=0.1, vmin=min_dblrms, vmax=max_dblrms, cmap=plt.cm.bone)
 fig.colorbar(dbl_plot, ax=ax1)
-ax1.set_title("dB level@sside. RMS values [dB]")
+ax1.set_title("dB level@int-01. RMS values [dB]")
 os.chdir(path_plots)
-plt.savefig(str('sside_acu_RMS.png'))
+plt.savefig(str('int-01_acu_RMS.png'))
 print("Plotting RMS done...")
 
 print("Starting plotting loop...")
@@ -83,17 +83,17 @@ for file in filelist:
     z = acu['z-coordinate']
     spl = acu['sound-pressure']
     dbl = acu['db-level']
-    fig, (ax0, ax1) = plt.subplots(nrows=2, figsize=(7, 10), dpi=300)
-    spl_plot = ax0.scatter(z, y, c=spl, s=2, cmap=plt.cm.bone, norm=colors.SymLogNorm(linthresh=5000, linscale=5000, vmin=-15000, vmax=12000))
+    fig, (ax0, ax1) = plt.subplots(nrows=2, figsize=(10, 10), dpi=300)
+    spl_plot = ax0.scatter(z, x, c=spl, s=2, cmap=plt.cm.bone, norm=colors.SymLogNorm(linthresh=5000, linscale=5000, vmin=-15000, vmax=12000))
     fig.colorbar(spl_plot, ax=ax0)
-    ax0.set_title(str('Sound pressure. Suction Side. Time: ' + str(timestep)))
-    dbl_plot = ax1.scatter(z, y, c=dbl, s=2, vmin=min_dbl, vmax=max_dbl, cmap=plt.cm.bone)
+    ax0.set_title(str('Sound pressure. int-01. Time: ' + str(timestep)))
+    dbl_plot = ax1.scatter(z, x, c=dbl, s=2, vmin=min_dbl, vmax=max_dbl, cmap=plt.cm.bone)
     fig.colorbar(dbl_plot, ax=ax1)
-    ax1.set_title(str('dB level. Suction Side. Time: ' + str(timestep)))
+    ax1.set_title(str('dB level. int-01. Time: ' + str(timestep)))
     os.chdir(path_plots)
-    plt.savefig(str('sside_acu_t_' + str(timestep) + '.png'))
+    plt.savefig(str('int-01_acu_t_' + str(timestep) + '.png'))
     plt.close()
-    print(str('sside_acu_t_' + str(timestep) + '.png done...'))
+    print(str('int-01_acu_t_' + str(timestep) + '.png done...'))
 print("Exiting plotting loop...")
 
 print("Script done, exiting.")

@@ -26,15 +26,15 @@ print("Loaded Libraries...")
 print("Starting code...")
 
 print("Loading directories..")
-path_data = 'D:/01_Dokumenty/01_PUT/01_DOKTORAT/13_PLGRID/noise-data/int-12'
-path_post = 'D:/01_Dokumenty/01_PUT/01_DOKTORAT/13_PLGRID/noise-data/int-12-post'
-path_acu = 'D:/01_Dokumenty/01_PUT/01_DOKTORAT/13_PLGRID/noise-data/int-12-post/acu'
-path_plots = 'D:/01_Dokumenty/01_PUT/01_DOKTORAT/13_PLGRID/noise-data/int-12-post/plots' #ścieżka do katalogu z interesującymi nas plikami
+path_data = 'D:/01_Dokumenty/01_PUT/01_DOKTORAT/13_PLGRID/noise-data/int-01'
+path_post = 'D:/01_Dokumenty/01_PUT/01_DOKTORAT/13_PLGRID/noise-data/int-01-post'
+path_acu = 'D:/01_Dokumenty/01_PUT/01_DOKTORAT/13_PLGRID/noise-data/int-01-post/acu'
+path_plots = 'D:/01_Dokumenty/01_PUT/01_DOKTORAT/13_PLGRID/noise-data/int-01-post/plots' #ścieżka do katalogu z interesującymi nas plikami
 print("Loaded directories...")
 
 print("Loading batch acoustic data...")
 os.chdir(path_acu)
-batch_data = dd.read_csv('int-12*.dat', sep=',', decimal='.')
+batch_data = dd.read_csv('*.dat', sep=',', decimal='.')
 print("Batch data done...")
 
 print("Calculate min, max, std for plotting range...")
@@ -44,7 +44,7 @@ min_spl=np.amin(minima['sound-pressure'])
 min_dbl=np.amin(minima['db-level'])
 max_spl=np.amax(maxima['sound-pressure'])
 max_dbl=np.amax(maxima['db-level'])
-std_devs = pd.DataFrame(batch_data.groupby('nodenumber').max().compute())
+std_devs = pd.DataFrame(batch_data.groupby('nodenumber').max().compute()) # to nie RMS, poprawić
 min_splrms=np.amin(std_devs['sound-pressure'])
 min_dblrms=np.amin(std_devs['db-level'])
 max_splrms=np.amax(std_devs['sound-pressure'])

@@ -26,11 +26,11 @@ print("Loaded Libraries...")
 print("Starting code...")
 
 print("Loading directories..")
-path_data = '/net/scratch/people/plgmosieznyj/SRS-v02/noise-data/pside'
+path_data = '/net/scratch/people/plgmosieznyj/SRS_v02/noise-data/pside'
 
-path_post = '/net/scratch/people/plgmosieznyj/SRS-v02/noise-data/pside-post'
-path_acu = '/net/scratch/people/plgmosieznyj/SRS-v02/noise-data/pside-post/acu'
-path_plots = '/net/scratch/people/plgmosieznyj/SRS-v02/noise-data/pside-post/plots' #ścieżka do katalogu z interesującymi nas plikami
+path_post = '/net/scratch/people/plgmosieznyj/SRS_v02/noise-data/pside-post'
+path_acu = '/net/scratch/people/plgmosieznyj/SRS_v02/noise-data/pside-post/acu'
+path_plots = '/net/scratch/people/plgmosieznyj/SRS_v02/noise-data/pside-post/plots' #ścieżka do katalogu z interesującymi nas plikami
 print("Loaded directories...")
 
 print("Loading batch acoustic data...")

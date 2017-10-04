@@ -11,10 +11,10 @@ print("Loaded Libraries...")
 print("Starting code...")
 
 print("Loading directories..")
-path_data = '/net/scratch/people/plgmosieznyj/SRS-v02/noise-data/int-tip'
-path_post = '/net/scratch/people/plgmosieznyj/SRS-v02/noise-data/int-tip-post'
-path_acu = '/net/scratch/people/plgmosieznyj/SRS-v02/noise-data/int-tip-post/acu'
-#path_plots = '/net/scratch/people/plgmosieznyj/SRS-v02/noise-data/int-tip-post/plots'
+path_data = '/net/scratch/people/plgmosieznyj/SRS_v02/noise-data/int-tip'
+path_post = '/net/scratch/people/plgmosieznyj/SRS_v02/noise-data/int-tip-post'
+path_acu = '/net/scratch/people/plgmosieznyj/SRS_v02/noise-data/int-tip-post/acu'
+#path_plots = '/net/scratch/people/plgmosieznyj/SRS_v02/noise-data/int-tip-post/plots'
 print("Loaded directories...")
 
 print("Loading batch data...")

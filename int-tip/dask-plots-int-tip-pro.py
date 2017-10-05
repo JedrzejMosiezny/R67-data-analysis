@@ -75,7 +75,7 @@ print("Starting plotting loop...")
 os.chdir(path_acu)
 filelist = os.listdir(path_acu)
 for file in filelist:
-    timestep = str(os.path.basename(str(file)))[11:-4]
+    timestep = str(os.path.basename(str(file)))[12:-4]
     os.chdir(path_acu)
     acu = pd.read_csv(file, sep=',', decimal='.', header=0)
     x = acu['x-coordinate']

@@ -5,11 +5,8 @@ import platform
 import numpy as np
 import pandas as pd
 import dask.dataframe as dd
-import scipy
-import sklearn
-import matplotlib.pyplot as plt
-import flask
 import math
+import matplotlib.pyplot as plt
 import scipy.interpolate as scin
 import matplotlib.colors as colors
 from matplotlib import cm

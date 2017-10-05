@@ -48,7 +48,7 @@ filelist = sorted(os.listdir(path_data))[len(os.listdir(path_acu)):]
 print("Starting noise analysis loop...")
 for file in filelist:
     os.chdir(path_data)
-    timestep = str(os.path.basename(str(file)))[7:-4]
+    timestep = str(os.path.basename(str(file)))[8:-4]
     time_static_p = pd.DataFrame(pd.read_csv(file, delimiter=r"\s+", header=0, usecols=["nodenumber", "pressure"], skiprows=0, decimal='.')).set_index('nodenumber')
     acoustic_p = time_static_p.subtract(avg_static_p, fill_value=None)
     spl_db = acoustic_p.apply(lambda x: 20 * np.log10(np.abs(x)/0.00002), axis=1)

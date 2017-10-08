@@ -12,7 +12,7 @@ print("Starting code...")
 
 print("Loading directories..")
 path_data = '/net/scratch/people/plgmosieznyj/SRS_v02/noise-data/int-01'
-path_post = '/net/scratch/people/plgmosieznyj/SRS_v02/noise-data/int-01-post'
+#path_post = '/net/scratch/people/plgmosieznyj/SRS_v02/noise-data/int-01-post'
 path_acu = '/net/scratch/people/plgmosieznyj/SRS_v02/noise-data/int-01-post/acu'
 #path_plots = '/net/scratch/people/plgmosieznyj/SRS_v02/noise-data/int-01-post/plots'
 print("Loaded directories...")

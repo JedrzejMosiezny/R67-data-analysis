@@ -6,7 +6,7 @@
 ## Ilość zadań na węzeł
 #SBATCH --ntasks-per-node=1
 ## Maksymalny czas trwania zlecenia (format HH:MM:SS)
-#SBATCH --time=24:00:00 
+#SBATCH --time=72:00:00 
 ## Nazwa grantu do rozliczenia zużycia zasobów
 #SBATCH -A acnoise2017
 ## Specyfikacja partycji

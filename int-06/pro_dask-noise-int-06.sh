@@ -1,6 +1,6 @@
 #!/bin/bash -l
 ## Nazwa zlecenia
-#SBATCH -J SRS_v02-int-01-noise
+#SBATCH -J SRS_v02-int-06-noise
 ## Liczba węzłów
 #SBATCH --nodes=1
 ## Ilość zadań na węzeł
@@ -29,6 +29,6 @@ module load tools/python-intel/3.6.2
 #cd $PBS_O_WORKDIR
 
 ## run calculation
-python3 /net/people/plgmosieznyj/noise-analysis/int-01/dask-noise-int-01-pro.py
+python3 /net/people/plgmosieznyj/noise-analysis/int-06/dask-noise-int-06-pro.py
 
 # ----------------------------------------------------------------- end-of-file

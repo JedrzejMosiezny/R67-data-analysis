@@ -1,12 +1,12 @@
 #!/bin/bash -l
 ## Nazwa zlecenia
-#SBATCH -J SRS_v02-int-01-noise
+#SBATCH -J SRS_v02-tip-noise
 ## Liczba węzłów
 #SBATCH --nodes=1
 ## Ilość zadań na węzeł
 #SBATCH --ntasks-per-node=1
 ## Maksymalny czas trwania zlecenia (format HH:MM:SS)
-#SBATCH --time=72:00:00 
+#SBATCH --time=24:00:00 
 ## Nazwa grantu do rozliczenia zużycia zasobów
 #SBATCH -A acnoise2017
 ## Specyfikacja partycji
@@ -29,6 +29,6 @@ module load tools/python-intel/3.6.2
 #cd $PBS_O_WORKDIR
 
 ## run calculation
-python3 /net/people/plgmosieznyj/noise-analysis/int-01/dask-noise-int-01-pro.py
+python3 /net/people/plgmosieznyj/noise-analysis/tip/dask-noise-tip-pro.py
 
 # ----------------------------------------------------------------- end-of-file

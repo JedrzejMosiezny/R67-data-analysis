@@ -23,6 +23,6 @@ srun /bin/hostname
 
 
 ## run calculation
-cp -r /net/scratch/people/plgmosieznyj/SRS_v02/noise-data/int-01/* /net/archive/groups/plggcfdp/R67_fluent/SRS_v02/noise-data/int-01/*
+cp -r /net/scratch/people/plgmosieznyj/SRS_v02/noise-data/int-01/. /net/archive/groups/plggcfdp/R67_fluent/SRS_v02/noise-data/int-01/
 
 # ----------------------------------------------------------------- end-of-file

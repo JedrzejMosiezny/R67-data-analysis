@@ -29,6 +29,6 @@ module load tools/python-intel/3.6.2
 #cd $PBS_O_WORKDIR
 
 ## run calculation
-python3 /net/people/plgmosieznyj/noise-analysis/int-12/dask-noise-int-12-pro.py
+python3 /net/people/plgmosieznyj/R67-data-analysis/int-12/dask-noise-int-12-pro.py
 
 # ----------------------------------------------------------------- end-of-file

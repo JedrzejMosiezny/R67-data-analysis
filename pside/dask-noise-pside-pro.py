@@ -10,11 +10,20 @@ import math
 print("Loaded Libraries...")
 print("Starting code...")
 
+'''
 print("Loading directories..")
 path_data = '/net/scratch/people/plgmosieznyj/SRS_v02/noise-data/pside'
-path_post = '/net/scratch/people/plgmosieznyj/SRS_v02/noise-data/pside-post'
+#path_post = '/net/scratch/people/plgmosieznyj/SRS_v02/noise-data/pside-post'
 path_acu = '/net/scratch/people/plgmosieznyj/SRS_v02/noise-data/pside-post/acu'
-#path_plots = '/net/scratch/people/plgmosieznyj/SRS_v02/noise-data/int-01-post/plots'
+#path_plots = '/net/scratch/people/plgmosieznyj/SRS_v02/noise-data/pside-post/plots'
+print("Loaded directories...")
+'''
+
+print("Loading directories..")
+path_data = '/net/archive/groups/plggcfdp/R67_fluent/SRS_v02/noise-data/pside'
+#path_post = '/net/scratch/people/plgmosieznyj/SRS_v02/noise-data/pside-post'
+path_acu = '/net/scratch/people/plgmosieznyj/SRS_v02/noise-data/pside-post/acu'
+#path_plots = '/net/scratch/people/plgmosieznyj/SRS_v02/noise-data/pside-post/plots'
 print("Loaded directories...")
 
 print("Loading batch data...")

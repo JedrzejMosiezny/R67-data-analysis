@@ -1,6 +1,6 @@
 #rms_fft.py
 print("Loading Libraries...")
-import os, sys
+import os
 import csv
 import platform
 import numpy as np
@@ -12,11 +12,11 @@ print("Loaded Libraries...")
 print("Starting code...")
 
 print("Loading directories..")
-#path_data = 'D:/01_Dokumenty/01_PUT/01_DOKTORAT/13_PLGRID/noise-data/int-01'
-#path_post = 'D:/01_Dokumenty/01_PUT/01_DOKTORAT/13_PLGRID/noise-data/int-01-post'
-path_acu = 'D:/01_Dokumenty/01_PUT/01_DOKTORAT/13_PLGRID/noise-data/int-01-post/acu'
-#path_plots = 'D:/01_Dokumenty/01_PUT/01_DOKTORAT/13_PLGRID/noise-data/int-01-post/plots'
-path_rms = 'D:/01_Dokumenty/01_PUT/01_DOKTORAT/13_PLGRID/noise-data/int-01-post/rms'
+#path_data = 'D:/01_DOKTORAT/13_PLGRID/noise-data/int-01'
+#path_post = 'D:/01_DOKTORAT/13_PLGRID/noise-data/int-01-post'
+path_acu = 'D:/01_DOKTORAT/13_PLGRID/noise-data/int-01-post/acu'
+#path_plots = 'D:/01_DOKTORAT/13_PLGRID/noise-data/int-01-post/plots'
+path_rms = 'D:/01_DOKTORAT/13_PLGRID/noise-data/int-01-post/rms'
 print("Loaded directories...")
 
 '''
@@ -39,7 +39,7 @@ os.chdir(path_rms)
 std_devs.to_csv(str('int-01_RMS.dat'), sep=',')
 
 fft = np.fft.fft(batch_data, n=None, axis=-1, norm=None) #chyba nie ruszy
-
+fft.to_csv(str('int-01_FFT.dat'), sep=',')
 
 '''
 print("Prepare to plot RMS values...")

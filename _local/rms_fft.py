@@ -11,7 +11,8 @@ print("Loaded Libraries...")
 
 print("Starting code...")
 
-print("Loading directories..")
+#PUT Workstation
+print("Loading directories..") 
 #path_data = 'D:/01_DOKTORAT/13_PLGRID/noise-data/int-01'
 #path_post = 'D:/01_DOKTORAT/13_PLGRID/noise-data/int-01-post'
 path_acu = 'D:/01_DOKTORAT/13_PLGRID/noise-data/int-01-post/acu'
@@ -20,6 +21,18 @@ path_rms = 'D:/01_DOKTORAT/13_PLGRID/noise-data/int-01-post/rms'
 print("Loaded directories...")
 
 '''
+#Local
+print("Loading directories..")
+#path_data = 'D:/01_DOKTORAT/13_PLGRID/noise-data/int-01'
+#path_post = 'C:/Users/JMosiezny/Documents/01_PUT/01_DOKTORAT/13_PLGRID/noise-data/int-01-post'
+path_acu = 'C:/Users/JMosiezny/Documents/01_PUT/01_DOKTORAT/13_PLGRID/noise-data/int-01-post/acu'
+#path_plots = 'C:/Users/JMosiezny/Documents/01_PUT/01_DOKTORAT/13_PLGRID/noise-data/int-01-post/plots'
+path_rms = 'C:/Users/JMosiezny/Documents/01_PUT/01_DOKTORAT/13_PLGRID/noise-data/int-01-post/rms'
+print("Loaded directories...")
+'''
+
+'''
+#PLGRID
 print("Loading directories..")
 #path_data = '/net/scratch/people/plgmosieznyj/SRS-v02/noise-data/int-01'
 #path_post = '/net/scratch/people/plgmosieznyj/SRS-v02/noise-data/int-01-post'

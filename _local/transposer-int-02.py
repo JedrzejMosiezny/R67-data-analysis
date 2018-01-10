@@ -13,21 +13,21 @@ print("Loaded Libraries...")
 '''
 #Local
 print("Loading directories..")
-#path_post = 'C:/Users/JMosiezny/Documents/01_PUT/01_DOKTORAT/13_PLGRID/noise-data/int-01-post'
-path_acu = 'C:/Users/JMosiezny/Documents/01_PUT/01_DOKTORAT/13_PLGRID/noise-data/int-01-post/acu'
-#path_plots = 'C:/Users/JMosiezny/Documents/01_PUT/01_DOKTORAT/13_PLGRID/noise-data/int-01-post/plots'
-path_signal = 'C:/Users/JMosiezny/Documents/01_PUT/01_DOKTORAT/13_PLGRID/noise-data/int-01-post/signal'
-#path_rms = 'C:/Users/JMosiezny/Documents/01_PUT/01_DOKTORAT/13_PLGRID/noise-data/int-01-post/rms'
+#path_post = 'C:/Users/JMosiezny/Documents/01_PUT/01_DOKTORAT/13_PLGRID/noise-data/int-02-post'
+path_acu = 'C:/Users/JMosiezny/Documents/01_PUT/01_DOKTORAT/13_PLGRID/noise-data/int-02-post/acu'
+#path_plots = 'C:/Users/JMosiezny/Documents/01_PUT/01_DOKTORAT/13_PLGRID/noise-data/int-02-post/plots'
+path_signal = 'C:/Users/JMosiezny/Documents/01_PUT/01_DOKTORAT/13_PLGRID/noise-data/int-02-post/signal'
+#path_rms = 'C:/Users/JMosiezny/Documents/01_PUT/01_DOKTORAT/13_PLGRID/noise-data/int-02-post/rms'
 print("Loaded directories...")
 '''
 #PUT Workstation
 print("Loading directories..") 
-#path_data = 'D:/01_DOKTORAT/13_PLGRID/noise-data/int-01'
-#path_post = 'D:/01_DOKTORAT/13_PLGRID/noise-data/int-01-post'
-path_acu = 'D:/01_DOKTORAT/13_PLGRID/noise-data/int-01-post/acu'
-#path_plots = 'D:/01_DOKTORAT/13_PLGRID/noise-data/int-01-post/plots'
-path_signal = 'D:/01_DOKTORAT/13_PLGRID/noise-data/int-01-post/signal'
-#path_rms = 'D:/01_DOKTORAT/13_PLGRID/noise-data/int-01-post/rms'
+#path_data = 'D:/01_DOKTORAT/13_PLGRID/noise-data/int-02'
+#path_post = 'D:/01_DOKTORAT/13_PLGRID/noise-data/int-02-post'
+path_acu = 'D:/01_DOKTORAT/13_PLGRID/noise-data/int-02-post/acu'
+#path_plots = 'D:/01_DOKTORAT/13_PLGRID/noise-data/int-02-post/plots'
+path_signal = 'D:/01_DOKTORAT/13_PLGRID/noise-data/int-02-post/signal'
+#path_rms = 'D:/01_DOKTORAT/13_PLGRID/noise-data/int-02-post/rms'
 print("Loaded directories...")
 
 print("Creating outer loop node list")
@@ -49,4 +49,4 @@ for i in nodelist:
         node_ts.append(node)
     node_ts = pd.concat(node_ts, axis=0, ignore_index=True)
     os.chdir(path_signal)
-    node_ts.to_csv(str('int-01_acu_node_' + str(i) +'.dat'), sep=",")
+    node_ts.to_csv(str('int-02_acu_node_' + str(i) +'.dat'), sep=",")

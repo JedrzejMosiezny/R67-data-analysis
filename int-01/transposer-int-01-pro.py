@@ -30,6 +30,7 @@ path_signal = 'D:/01_DOKTORAT/13_PLGRID/noise-data/int-01-post/signal'
 #path_rms = 'D:/01_DOKTORAT/13_PLGRID/noise-data/int-01-post/rms'
 print("Loaded directories...")
 
+'''
 print("Loading directories..")
 path_data = '/net/archive/groups/plggcfdp/R67_fluent/SRS_v02/noise-data/int-01'
 #path_post = '/net/scratch/people/plgmosieznyj/SRS_v02/noise-data/int-01-post'
@@ -38,6 +39,7 @@ path_acu = '/net/scratch/people/plgmosieznyj/SRS_v02/noise-data/int-01-post/acu'
 path_signal = '/net/scratch/people/plgmosieznyj/SRS_v02/noise-data/int-01-post/signal'
 #path_rms = '/net/scratch/people/plgmosieznyj/SRS_v02/noise-data/int-01-post/rms'
 print("Loaded directories...")
+'''
 
 print("Creating outer loop node list")
 #nodelist = list(range(1, 100+1))

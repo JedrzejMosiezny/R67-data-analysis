@@ -43,10 +43,10 @@ print("Loaded directories...")
 
 print("Creating outer loop node list")
 #nodelist = list(range(1, 100+1))
-nodelist = list(range(1, 38138+1))
+nodelist = list(range(1, 38138+1))[len(os.listdir(path_signal)):]
 print("Done")
 print("Creating inner loop file list")
-filelist = sorted(os.listdir(path_acu))[len(os.listdir(path_signal)):]
+filelist = sorted(os.listdir(path_acu))
 print("Done")
 
 print("Entering outer loop")

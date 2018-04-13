@@ -13,6 +13,7 @@ print("Loaded Libraries...")
 
 print("Starting code...")
 
+'''
 #PUT Workstation
 print("Loading directories..") 
 #path_data = 'D:/01_DOKTORAT/13_PLGRID/noise-data/int-01'
@@ -22,7 +23,7 @@ path_acu = 'D:/01_DOKTORAT/13_PLGRID/noise-data/int-01-post/acu'
 #path_signal = 'D:/01_DOKTORAT/13_PLGRID/noise-data/int-01-post/signal'
 path_fft = 'D:/01_DOKTORAT/13_PLGRID/noise-data/int-01-post/fft'
 print("Loaded directories...")
-
+'''
 '''
 #Local
 print("Loading directories..")
@@ -34,7 +35,6 @@ path_rms = 'C:/Users/JMosiezny/Documents/01_PUT/01_DOKTORAT/13_PLGRID/noise-data
 print("Loaded directories...")
 '''
 
-'''
 #PLGRID
 print("Loading directories..")
 #path_data = '/net/scratch/people/plgmosieznyj/SRS-v02/noise-data/int-01'
@@ -43,7 +43,7 @@ path_acu = '/net/scratch/people/plgmosieznyj/SRS-v02/noise-data/int-01-post/acu'
 #path_plots = '/net/scratch/people/plgmosieznyj/SRS-v02/noise-data/int-01-post/plots'
 path_rms = '/net/scratch/people/plgmosieznyj/SRS-v02/noise-data/int-01-post/rms'
 print("Loaded directories...")
-'''
+
 print("Defining functions") 
 def FFT_db(x):
     T = 0.050150  # Duration in seconds

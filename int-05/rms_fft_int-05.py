@@ -13,37 +13,37 @@ print("Loaded Libraries...")
 
 print("Starting code...")
 
+'''
 #PUT Workstation
 print("Loading directories..") 
-#path_data = 'D:/01_DOKTORAT/13_PLGRID/noise-data/int-01'
-#path_post = 'D:/01_DOKTORAT/13_PLGRID/noise-data/int-01-post'
-path_acu = 'D:/01_DOKTORAT/13_PLGRID/noise-data/int-01-post/acu'
-#path_plots = 'D:/01_DOKTORAT/13_PLGRID/noise-data/int-01-post/plots'
-#path_signal = 'D:/01_DOKTORAT/13_PLGRID/noise-data/int-01-post/signal'
-path_fft = 'D:/01_DOKTORAT/13_PLGRID/noise-data/int-01-post/fft'
+#path_data = 'D:/01_DOKTORAT/13_PLGRID/noise-data/int-05'
+#path_post = 'D:/01_DOKTORAT/13_PLGRID/noise-data/int-05-post'
+path_acu = 'D:/01_DOKTORAT/13_PLGRID/noise-data/int-05-post/acu'
+#path_plots = 'D:/01_DOKTORAT/13_PLGRID/noise-data/int-05-post/plots'
+#path_signal = 'D:/01_DOKTORAT/13_PLGRID/noise-data/int-05-post/signal'
+path_fft = 'D:/01_DOKTORAT/13_PLGRID/noise-data/int-05-post/fft'
 print("Loaded directories...")
-
+'''
 '''
 #Local
 print("Loading directories..")
-#path_data = 'D:/01_DOKTORAT/13_PLGRID/noise-data/int-01'
-#path_post = 'C:/Users/JMosiezny/Documents/01_PUT/01_DOKTORAT/13_PLGRID/noise-data/int-01-post'
-path_acu = 'C:/Users/JMosiezny/Documents/01_PUT/01_DOKTORAT/13_PLGRID/noise-data/int-01-post/acu'
-#path_plots = 'C:/Users/JMosiezny/Documents/01_PUT/01_DOKTORAT/13_PLGRID/noise-data/int-01-post/plots'
-path_rms = 'C:/Users/JMosiezny/Documents/01_PUT/01_DOKTORAT/13_PLGRID/noise-data/int-01-post/rms'
+#path_data = 'D:/01_DOKTORAT/13_PLGRID/noise-data/int-05'
+#path_post = 'C:/Users/JMosiezny/Documents/01_PUT/01_DOKTORAT/13_PLGRID/noise-data/int-05-post'
+path_acu = 'C:/Users/JMosiezny/Documents/01_PUT/01_DOKTORAT/13_PLGRID/noise-data/int-05-post/acu'
+#path_plots = 'C:/Users/JMosiezny/Documents/01_PUT/01_DOKTORAT/13_PLGRID/noise-data/int-05-post/plots'
+path_rms = 'C:/Users/JMosiezny/Documents/01_PUT/01_DOKTORAT/13_PLGRID/noise-data/int-05-post/rms'
 print("Loaded directories...")
 '''
 
-'''
 #PLGRID
 print("Loading directories..")
-#path_data = '/net/scratch/people/plgmosieznyj/SRS-v02/noise-data/int-01'
-#path_post = '/net/scratch/people/plgmosieznyj/SRS-v02/noise-data/int-01-post'
-path_acu = '/net/scratch/people/plgmosieznyj/SRS-v02/noise-data/int-01-post/acu'
-#path_plots = '/net/scratch/people/plgmosieznyj/SRS-v02/noise-data/int-01-post/plots'
-path_rms = '/net/scratch/people/plgmosieznyj/SRS-v02/noise-data/int-01-post/rms'
+#path_data = '/net/scratch/people/plgmosieznyj/SRS-v02/noise-data/int-05'
+#path_post = '/net/scratch/people/plgmosieznyj/SRS-v02/noise-data/int-05-post'
+path_acu = '/net/scratch/people/plgmosieznyj/SRS-v02/noise-data/int-05-post/acu'
+#path_plots = '/net/scratch/people/plgmosieznyj/SRS-v02/noise-data/int-05-post/plots'
+path_rms = '/net/scratch/people/plgmosieznyj/SRS-v02/noise-data/int-05-post/rms'
 print("Loaded directories...")
-'''
+
 print("Defining functions") 
 def FFT_db(x):
     T = 0.050150  # Duration in seconds
@@ -85,7 +85,7 @@ print("Functions defined...")
 
 print("Loading batch data...")
 os.chdir(path_acu)
-batch_pressure = dd.read_csv('int-01*', delimiter=",", decimal='.',usecols=["nodenumber", "sound-pressure"])
+batch_pressure = dd.read_csv('int-05*', delimiter=",", decimal='.',usecols=["nodenumber", "sound-pressure"])
 batch_pressure = batch_pressure.set_index("nodenumber")
 print("Batch data done...")
 
@@ -126,6 +126,6 @@ print("FFT Loop done...")
 print("Saving FFT to dataframe...")
 node_fft_max.set_index('nodenumber')
 os.chdir(path_fft)
-node_fft_max.to_csv(str('int-01_fft_max.dat'), sep=",")
+node_fft_max.to_csv(str('int-05_fft_max.dat'), sep=",")
 print("Dataframe saved...")
 print("Script completed...")

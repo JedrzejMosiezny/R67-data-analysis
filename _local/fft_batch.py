@@ -1,4 +1,4 @@
-#rms_fft.py
+#batch_fft.py
 def folder_fft(folder)
     import os
     import csv
@@ -15,17 +15,17 @@ def folder_fft(folder)
 
     #PUT Workstation
     print("Loading directories..") 
-    #path_data = 'D:/01_DOKTORAT/13_PLGRID/noise-data/int-01'
-    #path_post = 'D:/01_DOKTORAT/13_PLGRID/noise-data/int-01-post'
-    path_acu = 'D:/01_DOKTORAT/13_PLGRID/noise-data/' + folder + '/acu'
-    #path_plots = 'D:/01_DOKTORAT/13_PLGRID/noise-data/int-01-post/plots'
-    path_fft = 'D:/01_DOKTORAT/13_PLGRID/noise-data/' + folder + '/fft'
+    #path_data = 'int-01'
+    #path_post = 'int-01-post'
+    path_acu = '' + folder + '/acu'
+    #path_plots = 'int-01-post/plots'
+    path_fft = '' + folder + '/fft'
     print("Loaded directories...")
 
     '''
     #Local
     print("Loading directories..")
-    #path_data = 'D:/01_DOKTORAT/13_PLGRID/noise-data/int-01'
+    #path_data = 'int-01'
     #path_post = 'C:/Users/JMosiezny/Documents/01_PUT/01_DOKTORAT/13_PLGRID/noise-data/int-01-post'
     path_acu = 'C:/Users/JMosiezny/Documents/01_PUT/01_DOKTORAT/13_PLGRID/noise-data/' + folder + '/acu'
     #path_plots = 'C:/Users/JMosiezny/Documents/01_PUT/01_DOKTORAT/13_PLGRID/noise-data/int-01-post/plots'
@@ -84,7 +84,7 @@ def folder_fft(folder)
 
     print("Loading batch data...")
     os.chdir(path_acu)
-    batch_pressure = dd.read_csv('int-01*', delimiter=",", decimal='.',usecols=["nodenumber", "sound-pressure"])
+    batch_pressure = dd.read_csv('*', delimiter=",", decimal='.',usecols=["nodenumber", "sound-pressure"])
     batch_pressure = batch_pressure.set_index("nodenumber")
     print("Batch data done...")
 
@@ -131,23 +131,23 @@ def folder_fft(folder)
 
 print("Starting script")
 
-folder_fft('D:/01_DOKTORAT/13_PLGRID/noise-data/int-01-post')
-folder_fft('D:/01_DOKTORAT/13_PLGRID/noise-data/int-02-post')
-folder_fft('D:/01_DOKTORAT/13_PLGRID/noise-data/int-03-post')
-folder_fft('D:/01_DOKTORAT/13_PLGRID/noise-data/int-04-post')
-folder_fft('D:/01_DOKTORAT/13_PLGRID/noise-data/int-05-post')
-folder_fft('D:/01_DOKTORAT/13_PLGRID/noise-data/int-06-post')
-folder_fft('D:/01_DOKTORAT/13_PLGRID/noise-data/int-07-post')
-folder_fft('D:/01_DOKTORAT/13_PLGRID/noise-data/int-08-post')
-folder_fft('D:/01_DOKTORAT/13_PLGRID/noise-data/int-09-post')
-folder_fft('D:/01_DOKTORAT/13_PLGRID/noise-data/int-10-post')
-folder_fft('D:/01_DOKTORAT/13_PLGRID/noise-data/int-11-post')
-folder_fft('D:/01_DOKTORAT/13_PLGRID/noise-data/int-12-post')
-folder_fft('D:/01_DOKTORAT/13_PLGRID/noise-data/int-tip-post')
-#folder_fft('D:/01_DOKTORAT/13_PLGRID/noise-data/lead-post')
-#folder_fft('D:/01_DOKTORAT/13_PLGRID/noise-data/pside-post')
-#folder_fft('D:/01_DOKTORAT/13_PLGRID/noise-data/sside-post')
-#folder_fft('D:/01_DOKTORAT/13_PLGRID/noise-data/tip-post')
-#folder_fft('D:/01_DOKTORAT/13_PLGRID/noise-data/trail-post')
+folder_fft('int-01-post')
+folder_fft('int-02-post')
+folder_fft('int-03-post')
+folder_fft('int-04-post')
+folder_fft('int-05-post')
+folder_fft('int-06-post')
+folder_fft('int-07-post')
+folder_fft('int-08-post')
+folder_fft('int-09-post')
+folder_fft('int-10-post')
+folder_fft('int-11-post')
+folder_fft('int-12-post')
+folder_fft('int-tip-post')
+folder_fft('pside-post')
+folder_fft('sside-post')
+folder_fft('tip-post')
+folder_fft('lead-post')
+folder_fft('trail-post')
 
 print("Script completed...")

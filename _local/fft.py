@@ -1,4 +1,4 @@
-#rms_fft.py
+#fft.py
 print("Loading Libraries...")
 import os
 import csv

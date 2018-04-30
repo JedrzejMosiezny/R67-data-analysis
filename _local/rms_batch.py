@@ -9,7 +9,6 @@ from scipy.fftpack import fft
 import pandas as pd
 import dask.dataframe as dd
 import math
-import matplotlib.pyplot as plt
 print("Loaded Libraries...")
 
 def interior_rms(folder)
@@ -20,7 +19,7 @@ def interior_rms(folder)
     path_acu = 'D:/01_DOKTORAT/13_PLGRID/noise-data/' + folder + '/acu'
     #path_plots = 'D:/01_DOKTORAT/13_PLGRID/noise-data/int-01-post/plots'
     #path_fft = 'D:/01_DOKTORAT/13_PLGRID/noise-data/' + folder + '/fft'
-    path_fft = 'D:/01_DOKTORAT/13_PLGRID/noise-data/' + folder + '/rms'
+    path_rms = 'D:/01_DOKTORAT/13_PLGRID/noise-data/' + folder + '/rms'
     print("Loaded directories...")
 
     '''

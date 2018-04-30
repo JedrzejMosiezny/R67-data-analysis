@@ -15,11 +15,12 @@ def folder_fft(folder)
 
     #PUT Workstation
     print("Loading directories..") 
-    #path_data = 'int-01'
-    #path_post = 'int-01-post'
-    path_acu = '' + folder + '/acu'
-    #path_plots = 'int-01-post/plots'
-    path_fft = '' + folder + '/fft'
+    #path_data = 'D:/01_DOKTORAT/13_PLGRID/noise-data/int-01'
+    #path_post = 'D:/01_DOKTORAT/13_PLGRID/noise-data/int-01-post'
+    path_acu = 'D:/01_DOKTORAT/13_PLGRID/noise-data/' + folder + '/acu'
+    #path_plots = 'D:/01_DOKTORAT/13_PLGRID/noise-data/int-01-post/plots'
+    path_fft = 'D:/01_DOKTORAT/13_PLGRID/noise-data/' + folder + '/fft'
+    #path_rms = 'D:/01_DOKTORAT/13_PLGRID/noise-data/' + folder + '/rms'
     print("Loaded directories...")
 
     '''

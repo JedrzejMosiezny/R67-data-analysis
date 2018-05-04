@@ -19,11 +19,11 @@ print("Loaded directories...")
 
 #PLGRID
 print("Loading directories..")
-path_acu = '/net/scratch/people/plgmosieznyj/SRS-v02/noise-data/tip-post/acu'
-path_plots = '/net/scratch/people/plgmosieznyj/SRS-v02/noise-data/tip-post/plots'
-path_fft = '/net/scratch/people/plgmosieznyj/SRS-v02/noise-data/tip-post/fft'
-path_rms = '/net/scratch/people/plgmosieznyj/SRS-v02/noise-data/tip-post/rms'
-path_coords = '/net/scratch/people/plgmosieznyj/SRS-v02/noise-data/tip-post/coords'
+path_acu = '/net/scratch/people/plgmosieznyj/SRS_v02/noise-data/tip-post/acu'
+path_plots = '/net/scratch/people/plgmosieznyj/SRS_v02/noise-data/tip-post/plots'
+path_fft = '/net/scratch/people/plgmosieznyj/SRS_v02/noise-data/tip-post/fft'
+path_rms = '/net/scratch/people/plgmosieznyj/SRS_v02/noise-data/tip-post/rms'
+path_coords = '/net/scratch/people/plgmosieznyj/SRS_v02/noise-data/tip-post/coords'
 print("Loaded directories...")
 
 print("Generating coords...")

@@ -13,11 +13,11 @@ print("Loaded Libraries...")
 
 #PLGRID
 print("Loading directories..")
-path_acu = '/net/scratch/people/plgmosieznyj/SRS-v02/noise-data/sside-post/acu'
-path_plots = '/net/scratch/people/plgmosieznyj/SRS-v02/noise-data/sside-post/plots'
-path_fft = '/net/scratch/people/plgmosieznyj/SRS-v02/noise-data/sside-post/fft'
-path_rms = '/net/scratch/people/plgmosieznyj/SRS-v02/noise-data/sside-post/rms'
-path_coords = '/net/scratch/people/plgmosieznyj/SRS-v02/noise-data/sside-post/coords'
+path_acu = '/net/scratch/people/plgmosieznyj/SRS_v02/noise-data/sside-post/acu'
+path_plots = '/net/scratch/people/plgmosieznyj/SRS_v02/noise-data/sside-post/plots'
+path_fft = '/net/scratch/people/plgmosieznyj/SRS_v02/noise-data/sside-post/fft'
+path_rms = '/net/scratch/people/plgmosieznyj/SRS_v02/noise-data/sside-post/rms'
+path_coords = '/net/scratch/people/plgmosieznyj/SRS_v02/noise-data/sside-post/coords'
 print("Loaded directories...")
 
 print("Loading batch data...")

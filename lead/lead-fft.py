@@ -15,11 +15,11 @@ print("Starting code...")
 
 #PLGRID
 print("Loading directories..")
-path_acu = '/net/scratch/people/plgmosieznyj/SRS-v02/noise-data/lead-post/acu'
-path_plots = '/net/scratch/people/plgmosieznyj/SRS-v02/noise-data/lead-post/plots'
-path_fft = '/net/scratch/people/plgmosieznyj/SRS-v02/noise-data/lead-post/fft'
-path_rms = '/net/scratch/people/plgmosieznyj/SRS-v02/noise-data/lead-post/rms'
-path_coords = '/net/scratch/people/plgmosieznyj/SRS-v02/noise-data/lead-post/coords'
+path_acu = '/net/scratch/people/plgmosieznyj/SRS_v02/noise-data/lead-post/acu'
+path_plots = '/net/scratch/people/plgmosieznyj/SRS_v02/noise-data/lead-post/plots'
+path_fft = '/net/scratch/people/plgmosieznyj/SRS_v02/noise-data/lead-post/fft'
+path_rms = '/net/scratch/people/plgmosieznyj/SRS_v02/noise-data/lead-post/rms'
+path_coords = '/net/scratch/people/plgmosieznyj/SRS_v02/noise-data/lead-post/coords'
 print("Loaded directories...")
 
 print("Defining functions") 

@@ -27,11 +27,11 @@ print("Starting code...")
 
 #PLGRID
 print("Loading directories..")
-path_acu = '/net/scratch/people/plgmosieznyj/SRS-v02/noise-data/int-01-post/acu'
-path_plots = '/net/scratch/people/plgmosieznyj/SRS-v02/noise-data/int-01-post/plots'
-path_fft = '/net/scratch/people/plgmosieznyj/SRS-v02/noise-data/int-01-post/fft'
-path_rms = '/net/scratch/people/plgmosieznyj/SRS-v02/noise-data/int-01-post/rms'
-path_coords = '/net/scratch/people/plgmosieznyj/SRS-v02/noise-data/int-01-post/coords'
+path_acu = '/net/scratch/people/plgmosieznyj/SRS_v02/noise-data/int-01-post/acu'
+path_plots = '/net/scratch/people/plgmosieznyj/SRS_v02/noise-data/int-01-post/plots'
+path_fft = '/net/scratch/people/plgmosieznyj/SRS_v02/noise-data/int-01-post/fft'
+path_rms = '/net/scratch/people/plgmosieznyj/SRS_v02/noise-data/int-01-post/rms'
+path_coords = '/net/scratch/people/plgmosieznyj/SRS_v02/noise-data/int-01-post/coords'
 print("Loaded directories...")
 
 print("Loading batch acoustic data...")

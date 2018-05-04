@@ -1,6 +1,6 @@
 #!/bin/bash -l
 ## Nazwa zlecenia
-#SBATCH -J SRS_v02-int-01-noise
+#SBATCH -J SRS_v02-int-01-coords
 ## Liczba węzłów
 #SBATCH --nodes=1
 ## Ilość zadań na węzeł

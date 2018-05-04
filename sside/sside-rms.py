@@ -22,13 +22,13 @@ print("Loaded directories...")
 
 print("Loading batch data...")
 os.chdir(path_acu)
-batch_data = dd.read_csv('sside*', delimiter=",", decimal='.',usecols=["nodenumber", "sound-pressure", "sound-intensity"])
+batch_data = dd.read_csv('sside*', delimiter=",", decimal='.',usecols=["nodenumber", "sound-pressure"])
 batch_data = batch_data.set_index("nodenumber")
 print("Batch data done...")
 
-rms = pd.DataFrame(batch_data.groupby('nodenumber').apply(lambda x: np.sqrt(np.mean(x**2)), meta={'sound-pressure': 'f8', 'sound-intensity': 'f8'}).compute())
+rms = pd.DataFrame(batch_data.groupby('nodenumber').apply(lambda x: np.sqrt(np.mean(x**2)), meta={'sound-pressure': 'f8'}).compute())
 rms['rms_spldb'] = rms['sound-pressure'].apply(lambda x: 20*np.log10(x/0.00002))
-rms['rms_sildb'] = rms['sound-intensity'].apply(lambda x: 20*np.log10(x/0.00002))
+#rms['rms_sildb'] = rms['sound-intensity'].apply(lambda x: 20*np.log10(x/0.00002))
 
 os.chdir(path_rms)
 rms.to_csv(str('sside_rms.dat'), sep=",")

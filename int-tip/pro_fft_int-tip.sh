@@ -12,9 +12,9 @@
 ## Specyfikacja partycji
 #SBATCH -p plgrid
 ## Plik ze standardowym wyjściem
-#SBATCH --output="output.out"
+#SBATCH --output="fft.out"
 ## Plik ze standardowym wyjściem błędów
-#SBATCH --error="error.err"
+#SBATCH --error="fft.err"
 
 
 ## przejscie do katalogu z ktorego wywolany zostal sbatch

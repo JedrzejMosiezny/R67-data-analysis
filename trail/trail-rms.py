@@ -22,7 +22,7 @@ print("Loaded directories...")
 
 print("Loading batch data...")
 os.chdir(path_acu)
-batch_data = dd.read_csv('tip*', delimiter=",", decimal='.',usecols=["nodenumber", "sound-pressure"])
+batch_data = dd.read_csv('*1.dat', delimiter=",", decimal='.',usecols=["nodenumber", "sound-pressure"])
 batch_data = batch_data.set_index("nodenumber")
 print("Batch data done...")
 

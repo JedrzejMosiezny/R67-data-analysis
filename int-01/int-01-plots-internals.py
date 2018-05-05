@@ -36,7 +36,7 @@ print("Loaded directories...")
 
 print("Loading batch acoustic data...")
 os.chdir(path_acu)
-batch_data = dd.read_csv('*', delimiter=",", decimal='.',usecols=["nodenumber", "sound-pressure", "sound-intensity"])
+batch_data = dd.read_csv('*1.dat', delimiter=",", decimal='.',usecols=["nodenumber", "sound-pressure", "sound-intensity"])
 batch_data = batch_data.set_index("nodenumber")
 print("Batch data done...")
 
@@ -51,7 +51,7 @@ print("Min and max for plotting range done...")
 
 print("Generating coordinates")
 os.chdir(path_coords)
-coords = pd.DataFrame(pd.read_csv('int-tip_coords.dat', delimiter=",", header=0, skiprows=0, decimal='.')).set_index('nodenumber')
+coords = pd.DataFrame(pd.read_csv('int-01_coords.dat', delimiter=",", header=0, skiprows=0, decimal='.')).set_index('nodenumber')
 x = coords['x-coordinate']
 y = coords['y-coordinate']
 z = coords['z-coordinate']
@@ -64,7 +64,7 @@ for file in filelist:
     os.chdir(path_acu)
     timestep = str(os.path.basename(str(file)))[11:-4] #[12:-4] for tip
 
-    data = pd.DataFrame(pd.read_csv('int-tip_acu_83371.dat', delimiter=",", header=0, skiprows=0, decimal='.')).set_index('nodenumber')
+    data = pd.DataFrame(pd.read_csv(file, delimiter=",", header=0, skiprows=0, decimal='.')).set_index('nodenumber')
     spl = data['sound-pressure']
     spl_db = data['spl-db']
     sil = data['sound-intensity']

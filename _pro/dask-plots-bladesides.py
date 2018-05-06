@@ -27,16 +27,16 @@ print("Starting code...")
 
 #PLGRID
 print("Loading directories..")
-path_acu = '/net/scratch/people/plgmosieznyj/SRS-v02/noise-data/int-01-post/acu'
-path_plots = '/net/scratch/people/plgmosieznyj/SRS-v02/noise-data/int-01-post/plots'
-path_fft = '/net/scratch/people/plgmosieznyj/SRS-v02/noise-data/int-01-post/fft'
-path_rms = '/net/scratch/people/plgmosieznyj/SRS-v02/noise-data/int-01-post/rms'
-path_coords = '/net/scratch/people/plgmosieznyj/SRS-v02/noise-data/int-01-post/coords'
+path_acu = '/net/scratch/people/plgmosieznyj/SRS-v02/noise-data/pside-post/acu'
+path_plots = '/net/scratch/people/plgmosieznyj/SRS-v02/noise-data/pside-post/plots'
+path_fft = '/net/scratch/people/plgmosieznyj/SRS-v02/noise-data/pside-post/fft'
+path_rms = '/net/scratch/people/plgmosieznyj/SRS-v02/noise-data/pside-post/rms'
+path_coords = '/net/scratch/people/plgmosieznyj/SRS-v02/noise-data/pside-post/coords'
 print("Loaded directories...")
 
 print("Loading batch acoustic data...")
 os.chdir(path_acu)
-batch_data = dd.read_csv('*', delimiter=",", decimal='.',usecols=["nodenumber", "sound-pressure"])
+batch_data = dd.read_csv('*1.dat', delimiter=",", decimal='.',usecols=["nodenumber", "sound-pressure"])
 batch_data = batch_data.set_index("nodenumber")
 print("Batch data done...")
 
@@ -51,7 +51,7 @@ print("Min and max for plotting range done...")
 
 print("Generating coordinates")
 os.chdir(path_coords)
-coords = pd.DataFrame(pd.read_csv('int-tip_coords.dat', delimiter=",", header=0, skiprows=0, decimal='.')).set_index('nodenumber')
+coords = pd.DataFrame(pd.read_csv('*.dat', delimiter=",", header=0, skiprows=0, decimal='.')).set_index('nodenumber')
 x = coords['x-coordinate']
 y = coords['y-coordinate']
 z = coords['z-coordinate']
@@ -64,7 +64,7 @@ for file in filelist:
     os.chdir(path_acu)
     timestep = str(os.path.basename(str(file)))[10:-4] #[10:-4] for pside & sside, [9:-4] for lead, [10:-4] for trail, [8:-4] for tip
 
-    data = pd.DataFrame(pd.read_csv('int-tip_acu_83371.dat', delimiter=",", header=0, skiprows=0, decimal='.')).set_index('nodenumber')
+    data = pd.DataFrame(pd.read_csv(file, delimiter=",", header=0, skiprows=0, decimal='.')).set_index('nodenumber')
     spl = data['sound-pressure']
     spl_db = data['spl-db']
     #sil = data['sound-intensity']
@@ -78,7 +78,7 @@ for file in filelist:
     pressure.colorbar(spldb_plot, ax=ax1)
     ax1.set_title(str('SPLdB at pside. Time: ' + str(timestep) + ' [dB]'))
     os.chdir(path_plots)
-    plt.savefig(str('pside_spl_t_' + str(timestep) + '.png'))
+    plt.savefig(str('pside-spl_t_' + str(timestep) + '.png'))
     plt.close()
 '''
     intensity, (ax0, ax1) = plt.subplots(nrows=2, figsize=(10, 10), dpi=90)

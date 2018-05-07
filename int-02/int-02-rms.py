@@ -14,10 +14,7 @@ print("Loaded Libraries...")
 #PLGRID
 print("Loading directories..")
 path_acu = '/net/scratch/people/plgmosieznyj/SRS_v02/noise-data/int-02-post/acu'
-path_plots = '/net/scratch/people/plgmosieznyj/SRS_v02/noise-data/int-02-post/plots'
-path_fft = '/net/scratch/people/plgmosieznyj/SRS_v02/noise-data/int-02-post/fft'
-path_rms = '/net/scratch/people/plgmosieznyj/SRS_v02/noise-data/int-02-post/rms'
-path_coords = '/net/scratch/people/plgmosieznyj/SRS_v02/noise-data/int-02-post/coords'
+path_rms = '/net/people/plgmosieznyj/rms'
 print("Loaded directories...")
 
 print("Loading batch data...")
@@ -26,9 +23,9 @@ batch_data = dd.read_csv('*1.dat', delimiter=",", decimal='.',usecols=["nodenumb
 batch_data = batch_data.set_index("nodenumber")
 print("Batch data done...")
 
-rms = pd.DataFrame(batch_data.groupby('nodenumber').apply(lambda x: np.sqrt(np.mean(x**2)), meta={'sound-pressure': 'f8', 'sound-intensity': 'f8'}).compute())
+rms = pd.DataFrame(batch_data.groupby('nodenumber').apply(lambda x: np.sqrt(np.mean(np.square(x))), meta={'sound-pressure': 'f8', 'sound-intensity': 'f8'}).compute())
 rms['rms_spldb'] = rms['sound-pressure'].apply(lambda x: 20*np.log10(x/0.00002))
-rms['rms_sildb'] = rms['sound-intensity'].apply(lambda x: 20*np.log10(x/0.00002))
+rms['rms_sildb'] = rms['sound-intensity'].apply(lambda x: 10*np.log10(x/(1e-12))
 
 os.chdir(path_rms)
-rms.to_csv(str('int-01_rms.dat'), sep=",")
+rms.to_csv(str('int-02-rms.dat'), sep=",")

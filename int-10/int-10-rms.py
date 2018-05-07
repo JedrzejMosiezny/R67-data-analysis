@@ -25,7 +25,7 @@ print("Batch data done...")
 
 rms = pd.DataFrame(batch_data.groupby('nodenumber').apply(lambda x: np.sqrt(np.mean(np.square(x))), meta={'sound-pressure': 'f8', 'sound-intensity': 'f8'}).compute())
 rms['rms_spldb'] = rms['sound-pressure'].apply(lambda x: 20*np.log10(x/0.00002))
-rms['rms_sildb'] = rms['sound-intensity'].apply(lambda x: 10*np.log10(x/(1e-12))
+rms['rms_sildb'] = rms['sound-intensity'].apply(lambda x: 10*np.log10(x/1e-12))
 
 os.chdir(path_rms)
 rms.to_csv(str('int-10-rms.dat'), sep=",")

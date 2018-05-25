@@ -23,9 +23,11 @@ batch_data = dd.read_csv('*1.dat', delimiter=",", decimal='.',usecols=["nodenumb
 batch_data = batch_data.set_index("nodenumber")
 print("Batch data done...")
 
-rms = pd.DataFrame(batch_data.groupby('nodenumber').apply(lambda x: np.sqrt(np.mean(np.square(x))), meta={'sound-pressure': 'f8'}).compute())
+print("Calculating rms...")
+#rms = pd.DataFrame(batch_data.groupby('nodenumber').apply(lambda x: np.sqrt(np.mean(np.square(x))), meta={'sound-pressure': 'f8', 'sound-intensity': 'f8'}).compute())
+rms = pd.DataFrame(batch_data.groupby('nodenumber').std().compute())
 rms['rms_spldb'] = rms['sound-pressure'].apply(lambda x: 20*np.log10(x/0.00002))
-#rms['rms_sildb'] = rms['sound-intensity'].apply(lambda x: 10*np.log10(x/(1e-12))
+#rms['rms_sildb'] = rms['sound-intensity'].apply(lambda x: 10*np.log10(x/1e-12))
 
 os.chdir(path_rms)
 rms.to_csv(str('sside-rms.dat'), sep=",")

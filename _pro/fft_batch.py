@@ -41,7 +41,7 @@ def folder_fft(folder)
     #path_post = '/net/scratch/people/plgmosieznyj/SRS-v02/noise-data/int-01-post'
     #path_plots = '/net/scratch/people/plgmosieznyj/SRS-v02/noise-data/int-01-post/plots'
     path_acu = '/net/scratch/people/plgmosieznyj/SRS-v02/noise-data/' + folder + '/acu'
-    path_fft = '/net/scratch/people/plgmosieznyj/SRS-v02/noise-data/fft'
+    path_fft = '/net/scratch/people/plgmosieznyj/SRS-v02/results/fft'
     print("Loaded directories...")
     
     print("Loading batch data...")

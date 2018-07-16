@@ -36,11 +36,11 @@ print("Loaded directories...")
 '''
 #PLGRID
 print("Loading directories..")
-#path_data = '/net/scratch/people/plgmosieznyj/SRS-v02/noise-data/int-04'
-#path_post = '/net/scratch/people/plgmosieznyj/SRS-v02/noise-data/int-04-post'
-path_acu = '/net/scratch/people/plgmosieznyj/SRS-v02/noise-data/int-04-post/acu'
-#path_plots = '/net/scratch/people/plgmosieznyj/SRS-v02/noise-data/int-04-post/plots'
-path_fft = '/net/scratch/people/plgmosieznyj/SRS-v02/results/fft'
+#path_data = '/net/scratch/people/plgmosieznyj/SRS_v02/noise-data/int-04'
+#path_post = '/net/scratch/people/plgmosieznyj/SRS_v02/noise-data/int-04-post'
+path_acu = '/net/scratch/people/plgmosieznyj/SRS_v02/noise-data/int-04-post/acu'
+#path_plots = '/net/scratch/people/plgmosieznyj/SRS_v02/noise-data/int-04-post/plots'
+path_fft = '/net/scratch/people/plgmosieznyj/SRS_v02/results/fft'
 print("Loaded directories...")
 
 print("Loading batch data...")

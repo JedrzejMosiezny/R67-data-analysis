@@ -23,6 +23,6 @@ cd $SLURM_SUBMIT_DIR
 srun /bin/hostname
 
 ## run calculation
-tar -czvf SRS_v02_int-tip.tar.gz /net/scratch/people/plgmosieznyj/SRS_v02/noise-data/int-tip
+tar -cf - /net/archive/groups/plggcfdp/R67_fluent/SRS_v02/flow-data/int-tip/ | xz -9 -c - > SRS_v02_int-tip.tar.xz
 
 # ----------------------------------------------------------------- end-of-file

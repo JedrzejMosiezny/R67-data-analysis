@@ -45,7 +45,7 @@ print("Loaded directories...")
 
 print("Loading batch data...")
 os.chdir(path_acu)
-batch_pressure = dd.read_csv('*.dat', delimiter=",", decimal='.',usecols=["nodenumber", "sound-pressure"])
+batch_pressure = dd.read_csv('*1.dat', delimiter=",", decimal='.',usecols=["nodenumber", "sound-pressure"])
 batch_pressure = batch_pressure.set_index("nodenumber")
 print("Batch data done...")
 

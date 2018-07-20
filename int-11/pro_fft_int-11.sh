@@ -8,11 +8,11 @@
 ## Ilość pamięci przypadającej na jeden rdzeń obliczeniowy (domyślnie 5GB na rdzeń)
 #SBATCH --mem-per-cpu=24GB
 ## Maksymalny czas trwania zlecenia (format HH:MM:SS)
-#SBATCH --time=168:00:00 
+#SBATCH --time=72:00:00 
 ## Nazwa grantu do rozliczenia zużycia zasobów
 #SBATCH -A acnoise2017
 ## Specyfikacja partycji
-#SBATCH -p plgrid-long
+#SBATCH -p plgrid
 ## Plik ze standardowym wyjściem
 #SBATCH --output="fft.out"
 ## Plik ze standardowym wyjściem błędów

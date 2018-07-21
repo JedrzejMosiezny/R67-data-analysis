@@ -23,6 +23,6 @@ cd $SLURM_SUBMIT_DIR
 srun /bin/hostname
 
 ## run calculation
-tar -cvf - /net/archive/groups/plggcfdp/R67_fluent/SRS_v02/flow-data/int-02/ | xz -9 -c - > SRS_v02_int-02.tar.xz > SRS_v02_pack_int-02.log
+tar -cvf - /net/archive/groups/plggcfdp/R67_fluent/SRS_v02/flow-data/int-02/ | xz -6 -c - > SRS_v02_int-02.tar.xz
 
 # ----------------------------------------------------------------- end-of-file

@@ -23,6 +23,6 @@ cd $SLURM_SUBMIT_DIR
 srun /bin/hostname
 
 ## run calculation
-tar -cvf - /net/archive/groups/plggcfdp/R67_fluent/SRS_v02/flow-data/trail/ | xz -9 -c - > SRS_v02_trail.tar.xz > SRS_v02_pack_trail.log
+tar -cvf - /net/archive/groups/plggcfdp/R67_fluent/SRS_v02/flow-data/trail/ | xz -6 -c - > SRS_v02_trail.tar.xz
 
 # ----------------------------------------------------------------- end-of-file

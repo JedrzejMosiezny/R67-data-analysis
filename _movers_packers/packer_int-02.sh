@@ -16,7 +16,7 @@
 ## Plik ze standardowym wyjściem błędów
 #SBATCH --error="error-int-02.err"
 ## Ilość pamięci przypadającej na jeden rdzeń obliczeniowy (domyślnie 5GB na rdzeń)
-#SBATCH --mem-per-cpu=32GB
+#SBATCH --mem-per-cpu=5GB
 
 ## przejscie do katalogu z ktorego wywolany zostal sbatch
 cd $SLURM_SUBMIT_DIR

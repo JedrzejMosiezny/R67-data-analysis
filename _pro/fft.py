@@ -10,8 +10,8 @@ print("Starting code...")
 
 #PLGRID
 print("Loading directories..")
-path_acu = '/net/scratch/people/plgmosieznyj/SRS-v02/noise-data/int-tip-post/acu'
-path_fft = '/net/scratch/people/plgmosieznyj/SRS-v02/fft'
+path_acu = '/net/scratch/people/plgmosieznyj/SRS_v02/noise-data/int-tip-post/acu'
+path_fft = '/net/scratch/people/plgmosieznyj/SRS_v02/fft'
 print("Loaded directories...")
 '''
 print("Loading directories..")

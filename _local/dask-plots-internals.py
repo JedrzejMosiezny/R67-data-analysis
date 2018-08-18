@@ -50,11 +50,11 @@ print("Loaded directories...")
 '''
 #PLGRID
 print("Loading directories..")
-#path_data = '/net/scratch/people/plgmosieznyj/SRS-v02/noise-data/int_tip'
-#path_post = '/net/scratch/people/plgmosieznyj/SRS-v02/noise-data/int_tip-post'
-path_acu = '/net/scratch/people/plgmosieznyj/SRS-v02/noise-data/int_tip-post/acu'
-#path_plots = '/net/scratch/people/plgmosieznyj/SRS-v02/noise-data/int_tip-post/plots'
-path_rms = '/net/scratch/people/plgmosieznyj/SRS-v02/noise-data/int_tip-post/rms'
+#path_data = '/net/scratch/people/plgmosieznyj/SRS_v02/noise-data/int_tip'
+#path_post = '/net/scratch/people/plgmosieznyj/SRS_v02/noise-data/int_tip-post'
+path_acu = '/net/scratch/people/plgmosieznyj/SRS_v02/noise-data/int_tip-post/acu'
+#path_plots = '/net/scratch/people/plgmosieznyj/SRS_v02/noise-data/int_tip-post/plots'
+path_rms = '/net/scratch/people/plgmosieznyj/SRS_v02/noise-data/int_tip-post/rms'
 print("Loaded directories...")
 '''
 

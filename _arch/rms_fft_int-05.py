@@ -37,11 +37,11 @@ print("Loaded directories...")
 
 #PLGRID
 print("Loading directories..")
-#path_data = '/net/scratch/people/plgmosieznyj/SRS-v02/noise-data/int-05'
-#path_post = '/net/scratch/people/plgmosieznyj/SRS-v02/noise-data/int-05-post'
-path_acu = '/net/scratch/people/plgmosieznyj/SRS-v02/noise-data/int-05-post/acu'
-#path_plots = '/net/scratch/people/plgmosieznyj/SRS-v02/noise-data/int-05-post/plots'
-path_rms = '/net/scratch/people/plgmosieznyj/SRS-v02/noise-data/int-05-post/rms'
+#path_data = '/net/scratch/people/plgmosieznyj/SRS_v02/noise-data/int-05'
+#path_post = '/net/scratch/people/plgmosieznyj/SRS_v02/noise-data/int-05-post'
+path_acu = '/net/scratch/people/plgmosieznyj/SRS_v02/noise-data/int-05-post/acu'
+#path_plots = '/net/scratch/people/plgmosieznyj/SRS_v02/noise-data/int-05-post/plots'
+path_rms = '/net/scratch/people/plgmosieznyj/SRS_v02/noise-data/int-05-post/rms'
 print("Loaded directories...")
 
 print("Defining functions") 

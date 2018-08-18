@@ -37,11 +37,11 @@ def folder_fft(folder)
     
     #PLGRID
     print("Loading directories..")
-    #path_data = '/net/scratch/people/plgmosieznyj/SRS-v02/noise-data/int-01'
-    #path_post = '/net/scratch/people/plgmosieznyj/SRS-v02/noise-data/int-01-post'
-    #path_plots = '/net/scratch/people/plgmosieznyj/SRS-v02/noise-data/int-01-post/plots'
-    path_acu = '/net/scratch/people/plgmosieznyj/SRS-v02/noise-data/' + folder + '/acu'
-    path_fft = '/net/scratch/people/plgmosieznyj/SRS-v02/noise-data/fft'
+    #path_data = '/net/scratch/people/plgmosieznyj/SRS_v02/noise-data/int-01'
+    #path_post = '/net/scratch/people/plgmosieznyj/SRS_v02/noise-data/int-01-post'
+    #path_plots = '/net/scratch/people/plgmosieznyj/SRS_v02/noise-data/int-01-post/plots'
+    path_acu = '/net/scratch/people/plgmosieznyj/SRS_v02/noise-data/' + folder + '/acu'
+    path_fft = '/net/scratch/people/plgmosieznyj/SRS_v02/noise-data/fft'
     print("Loaded directories...")
     
     print("Loading batch data...")

@@ -11,7 +11,7 @@ print("Starting code...")
 #PLGRID
 print("Loading directories..")
 path_acu = '/net/scratch/people/plgmosieznyj/SRS_v02/noise-data/int-09-post/acu'
-path_fft = '/net/scratch/people/plgmosieznyj/SRS_v02/fft'
+path_fft = '/net/scratch/people/plgmosieznyj/SRS_v02/results/fft'
 print("Loaded directories...")
 '''
 print("Loading directories..")

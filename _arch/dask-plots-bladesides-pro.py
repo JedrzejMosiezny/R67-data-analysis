@@ -70,7 +70,7 @@ print("Plotting RMS done...")
 
 print("Starting plotting loop...")
 os.chdir(path_acu)
-filelist = sorted(os.listdir(path_acu))[len(os.listdir(path_plots)):]
+filelist = sorted(os.listdir(path_acu))[0::10][len(os.listdir(path_plots)):]
 for file in filelist:
     timestep = str(os.path.basename(str(file)))[11:-4]
     os.chdir(path_acu)

@@ -14,7 +14,7 @@ print("Loaded Libraries...")
 #PLGRID
 print("Loading directories..")
 path_acu = '/net/scratch/people/plgmosieznyj/SRS_v02/noise-data/int-01-post/acu'
-path_rms = '/net/people/plgmosieznyj/rms'
+path_rms = '/net/scratch/people/plgmosieznyj/SRS_v02/results/rms'
 print("Loaded directories...")
 
 print("Loading batch data...")

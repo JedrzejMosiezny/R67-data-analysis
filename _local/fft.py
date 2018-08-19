@@ -21,7 +21,7 @@ print("Loaded directories...")
 
 print("Getting filelist...")
 os.chdir(path_acu)
-filelist = sorted(os.listdir(path_acu))[0::10]
+filelist = sorted(os.listdir(path_acu))
 
 print("Starting batch loop...")
 batch_data = pd.DataFrame()

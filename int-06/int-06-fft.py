@@ -10,12 +10,12 @@ print("Starting code...")
 
 #PLGRID
 print("Loading directories..")
-path_acu = '/net/scratch/people/plgmosieznyj/SRS_v02/noise-data/int-01-post/acu'
+path_acu = '/net/scratch/people/plgmosieznyj/SRS_v02/noise-data/int-06-post/acu'
 path_fft = '/net/scratch/people/plgmosieznyj/SRS_v02/results/fft'
 print("Loaded directories...")
 '''
 print("Loading directories..")
-path_acu = 'C:/Users/JMosiezny/Documents/01_PUT/01_DOKTORAT/13_PLGRID/noise-data/int-01-post/acu'
+path_acu = 'C:/Users/JMosiezny/Documents/01_PUT/01_DOKTORAT/13_PLGRID/noise-data/int-06-post/acu'
 path_fft = 'C:/Users/JMosiezny/Documents/01_PUT/01_DOKTORAT/15_results/fft'
 print("Loaded directories...")
 '''
@@ -35,6 +35,6 @@ fft_data = batch_data.apply(lambda x: np.fft.fft(x), axis=1)
 print("Saving FFT to dataframe...")
 #fft_data.set_index('nodenumber')
 os.chdir(path_fft)
-fft_data.to_csv('int-01-fft.csv', sep=',')
+fft_data.to_csv('int-06-fft.csv', sep=',')
 print("Dataframe saved...")
 print("Script completed...")

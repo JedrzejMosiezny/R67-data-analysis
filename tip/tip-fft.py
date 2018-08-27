@@ -1,40 +1,61 @@
 #fft.py
 print("Loading Libraries...")
 import os
+import csv
+import platform
 import numpy as np
-# from scipy.fftpack import fft
+from scipy.fftpack import fft
 import pandas as pd
+import dask.dataframe as dd
+import math
+#import matplotlib.pyplot as plt
 print("Loaded Libraries...")
 
 print("Starting code...")
 
+'''
+#PUT Workstation
+print("Loading directories..") 
+#path_data = 'D:/01_DOKTORAT/13_PLGRID/noise-data/tip'
+#path_post = 'D:/01_DOKTORAT/13_PLGRID/noise-data/tip-post'
+path_acu = 'D:/01_DOKTORAT/13_PLGRID/noise-data/tip-post/acu'
+#path_plots = 'D:/01_DOKTORAT/13_PLGRID/noise-data/tip-post/plots'
+#path_signal = 'D:/01_DOKTORAT/13_PLGRID/noise-data/tip-post/signal'
+path_fft = 'D:/01_DOKTORAT/13_PLGRID/noise-data/tip-post/fft'
+print("Loaded directories...")
+'''
+'''
+#Local
+print("Loading directories..")
+#path_data = 'D:/01_DOKTORAT/13_PLGRID/noise-data/tip'
+#path_post = 'C:/Users/JMosiezny/Documents/01_PUT/01_DOKTORAT/13_PLGRID/noise-data/tip-post'
+path_acu = 'C:/Users/JMosiezny/Documents/01_PUT/01_DOKTORAT/13_PLGRID/noise-data/tip-post/acu'
+#path_plots = 'C:/Users/JMosiezny/Documents/01_PUT/01_DOKTORAT/13_PLGRID/noise-data/tip-post/plots'
+path_rms = 'C:/Users/JMosiezny/Documents/01_PUT/01_DOKTORAT/13_PLGRID/noise-data/tip-post/rms'
+print("Loaded directories...")
+'''
 #PLGRID
 print("Loading directories..")
+#path_data = '/net/scratch/people/plgmosieznyj/SRS_v02/noise-data/tip'
+#path_post = '/net/scratch/people/plgmosieznyj/SRS_v02/noise-data/tip-post'
 path_acu = '/net/scratch/people/plgmosieznyj/SRS_v02/noise-data/tip-post/acu'
+#path_plots = '/net/scratch/people/plgmosieznyj/SRS_v02/noise-data/tip-post/plots'
 path_fft = '/net/scratch/people/plgmosieznyj/SRS_v02/results/fft'
 print("Loaded directories...")
-'''
-print("Loading directories..")
-path_acu = 'C:/Users/JMosiezny/Documents/01_PUT/01_DOKTORAT/13_PLGRID/noise-data/tip-post/acu'
-path_fft = 'C:/Users/JMosiezny/Documents/01_PUT/01_DOKTORAT/15_results/fft'
-print("Loaded directories...")
-'''
-print("Getting filelist...")
+
+print("Loading batch data...")
 os.chdir(path_acu)
-filelist = sorted(os.listdir(path_acu))[0::10]
+batch_pressure = dd.read_csv('*.dat', delimiter=",", decimal='.',usecols=["nodenumber", "sound-pressure"])
+batch_pressure = batch_pressure.set_index("nodenumber")
+print("Batch data done...")
 
-print("Starting batch loop...")
-batch_data = pd.DataFrame()
-for file in filelist:
-    batch_data[file] = pd.read_csv(file).set_index('nodenumber')['sound-pressure']
-    print(str(file) + " done...")
-
-print("Calculating FFT...")
-fft_data = batch_data.apply(lambda x: np.fft.fft(x), axis=1)
+print("Calculating FFT...") 
+batch_fft = batch_pressure.groupby('nodenumber').apply(lambda x: fft(x), meta=('node-fourier-series', 'f8')).compute()
+print("FFT Done..") 
 
 print("Saving FFT to dataframe...")
-#fft_data.set_index('nodenumber')
+#node_fft_max.set_index('nodenumber')
 os.chdir(path_fft)
-fft_data.to_csv('tip-fft.csv', sep=',')
+batch_fft.to_csv(str('tip_fft.dat'), sep=",")
 print("Dataframe saved...")
 print("Script completed...")
